@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.StartWindowController">
+   <children>
+      <TextField fx:id="UsernameSI" layoutX="14.0" layoutY="97.0" prefHeight="31.0" prefWidth="131.0" />
+      <Button fx:id="Button_SignIn" defaultButton="true" layoutX="80.0" layoutY="237.0" mnemonicParsing="false" onAction="#clickSignIn" style="-fx-background-color: #608456;" text="Sign in">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect></Button>
+      <TextField fx:id="PasswordSI" layoutX="14.0" layoutY="138.0" prefHeight="31.0" prefWidth="131.0" />
+      <Text layoutX="173.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="173.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="651.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="email address">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="651.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="EmailAddr" layoutX="492.0" layoutY="143.0" prefHeight="31.0" prefWidth="131.0" />
+      <TextField fx:id="UsernameSU" layoutX="492.0" layoutY="102.0" prefHeight="31.0" prefWidth="131.0" />
+      <TextField fx:id="PasswordSU" layoutX="492.0" layoutY="188.0" prefHeight="31.0" prefWidth="131.0" />
+      <Text layoutX="651.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="651.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="confirm Password">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="ConfirmPassSU" layoutX="492.0" layoutY="237.0" prefHeight="31.0" prefWidth="131.0" />
+      <Button fx:id="Button_SignUp" defaultButton="true" layoutX="558.0" layoutY="300.0" mnemonicParsing="false" onAction="#clickSignUp" style="-fx-background-color: #608456;" text="Sign up">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
