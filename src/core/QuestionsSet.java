@@ -66,7 +66,7 @@ public class QuestionsSet {
 			int c=0;
 			int num=0;
 			do {
-				num =(int)(Math.random()*600-0.0001);
+				num =(int)(Math.random()*600);
 				for (int k:numbers)
 					if (num==k)
 						c++;
@@ -75,5 +75,24 @@ public class QuestionsSet {
 			numbers.add(num);
 		}
 		return myQuestion;
+	}
+	
+	public ArrayList<Element> getAllCategoryQuestions(int set){
+		int num=(int)(Math.random()*30);
+		ArrayList<Element> myQuestion=new ArrayList<Element>();
+		
+		for (int l=num*30;l<num*30+20;l++){
+			myQuestion.add(getQuestion(l,set));
+		}
+		return myQuestion;
+	}
+	
+	public ArrayList<Element> getOneCategoryQuestions(int i,int set){
+		ArrayList<Element> myQuestion=new ArrayList<Element>();
+		for (int l=i-1;l<600;l+=20){
+			myQuestion.add(getQuestion(l,set));
+		}
+		return myQuestion;
+		
 	}
 }
