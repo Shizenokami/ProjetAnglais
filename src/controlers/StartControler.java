@@ -21,6 +21,10 @@ public class StartControler {
 	@FXML Button Button_SignIn;
 	@FXML Button Button_SignUp;
 	
+	public StartControler() {
+		
+	}
+	
 	public void setmainpane(BorderPane b){
 		this.Main_Pane=b;
 	}

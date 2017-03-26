@@ -2,8 +2,8 @@ package controlers;
 
 import java.io.IOException;
 
-import app.controller.MainApp;
-import app.controller.StartWindowController;
+
+import controlers.StartControler;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,7 +21,7 @@ public class MainControler {
 		            loader.setLocation(MainApp.class.getResource("../views/StartWindow.fxml"));
 		            AnchorPane StartWindow = (AnchorPane) loader.load();
 		            Main_Pane.setCenter(StartWindow);
-		            StartWindowController v = loader.getController();
+		            StartControler v = loader.getController();
 		            v.setmainpane(Main_Pane);
 		            
 		        } catch (IOException e) {
