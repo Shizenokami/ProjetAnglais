@@ -19,11 +19,11 @@ public class AuthentificationUser {
 	private Document doc;
 	private String pathDoc;
 	
-	/*public static void main(String argv[]) {
+	public static void main(String argv[]) {
 		AuthentificationUser auth=new AuthentificationUser("asset/usrs.xml");
-		auth.signUp("me","else","fin");
+		auth.signUp("meuh","else","fin");
 		System.out.println(auth.signIn("meuh", "fin"));
-	}*/
+	}
 	
 	public AuthentificationUser(String path){
 		pathDoc=path;
@@ -46,20 +46,7 @@ public class AuthentificationUser {
 		}	
 	}
 	
-	public void saveinUsers(String userName,String mail,String password,String pathUser){
-		Element newUser= doc.createElement("user");
-		Element name=doc.createElement("userName");
-		Element email=doc.createElement("mail");
-		Element pass=doc.createElement("password");
-		Element uElement = (Element) setUser.item(0);
-		
-		uElement.appendChild(newUser);
-		newUser.appendChild(name);
-		newUser.appendChild(email);
-		newUser.appendChild(pass);
-		name.appendChild(doc.createTextNode(userName));
-		email.appendChild(doc.createTextNode(mail));
-		pass.appendChild(doc.createTextNode(password));
+	public void saveinUsers(String pathUser){
 		try {
 			
 			TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -76,14 +63,33 @@ public class AuthentificationUser {
 	
 	public boolean signUp(String userName,String mail,String password){
 		boolean bool=false;
-		for (int temp = 0; temp < setUser.getLength(); temp++) {
-			Element usr=(Element) setUser.item(temp);
+		NodeList usrs = doc.getElementsByTagName("user");
+		for (int temp = 0; temp < usrs.getLength(); temp++) {
+			Element usr=(Element) usrs.item(temp);
 			if ( usr.getElementsByTagName("userName").item(0).getTextContent().equals(userName))
 				bool=true;
 				
 		}
-		if (!bool)
-			saveinUsers(userName,mail,password,pathDoc);
+		if (!bool){
+			Element newUser= doc.createElement("user");
+			Element name=doc.createElement("userName");
+			Element email=doc.createElement("mail");
+			Element pass=doc.createElement("password");
+			Element totalQuestion=doc.createElement("totalQuestion");
+			Element correctAnswer=doc.createElement("correctAnswer");
+			Element uElement = (Element) setUser.item(0);
+			uElement.appendChild(newUser);
+			newUser.appendChild(name);
+			newUser.appendChild(email);
+			newUser.appendChild(pass);
+			newUser.appendChild(totalQuestion);
+			newUser.appendChild(correctAnswer);
+			name.appendChild(doc.createTextNode(userName));
+			email.appendChild(doc.createTextNode(mail));
+			pass.appendChild(doc.createTextNode(password));
+			totalQuestion.appendChild(doc.createTextNode("0"));
+			correctAnswer.appendChild(doc.createTextNode("0"));
+			saveinUsers(pathDoc);}
 		else 
 			System.out.println("user already exist");
 		return bool;
