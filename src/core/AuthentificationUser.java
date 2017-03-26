@@ -60,6 +60,9 @@ public class AuthentificationUser {
 			e.printStackTrace();
 		}
 	}
+	public void saveinUsers(){
+		saveinUsers(pathDoc);
+	}
 	
 	public boolean signUp(String userName,String mail,String password){
 		boolean bool=false;
@@ -95,13 +98,13 @@ public class AuthentificationUser {
 		return bool;
 	}
 	
-	public boolean signIn(String userName,String password){
+	public Element signIn(String userName,String password){
 		for (int temp = 0; temp < setUser.getLength(); temp++) {
 			Element usr=(Element) setUser.item(temp);
 			if ( usr.getElementsByTagName("userName").item(0).getTextContent().equals(userName) && usr.getElementsByTagName("password").item(0).getTextContent().equals(password))
-				return true;
+				return usr;
 		}
-		return false;
+		return null;
 	}
 	
 }
