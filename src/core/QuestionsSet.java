@@ -9,12 +9,23 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
+
+
+/* Use getRandomNumberQuestions(number of question needed , set number (1 or 2) will return an arraylist of element
+ * to get the task you need to apply to the element getElementsByTagName("task").item(0).getTextContent()
+ * to get the i answer you need to apply to the element getElementsByTagName("var").item(i).getTextContent()
+ * to get the number of the correct answer you need to apply to the element getElementsByTagName("ans").item(0).getTextContent()
+ * to get an explanation you need to apply getElementsByTagName("exp").item(0).getTextContent()
+ */
+
 public class QuestionsSet {
 
 	private NodeList set1;
 	private NodeList set2;
 	
-	public QuestionsSet() {}
+	public QuestionsSet() {
+		loadQuestions("asset/File1.xml","asset/File2.xml");
+	}
 	
 	
 	//Path 1 "asset/File1.xml" Path 2 "asset/File2.xml"
@@ -65,14 +76,4 @@ public class QuestionsSet {
 		}
 		return myQuestion;
 	}
-	
-	/* format quetions
-	 System.out.println("Question : " + getQuestion(i,set).getElementsByTagName("task").item(0).getTextContent());
-			System.out.println("Reponse A : " + getQuestion(i,set).getElementsByTagName("var").item(0).getTextContent());
-			System.out.println("Reponse B : " + getQuestion(i,set).getElementsByTagName("var").item(1).getTextContent());
-			System.out.println("Reponse C : " + getQuestion(i,set).getElementsByTagName("var").item(2).getTextContent());
-			System.out.println("Reponse D : " + getQuestion(i,set).getElementsByTagName("var").item(3).getTextContent());
-			System.out.println("Answer : " + getQuestion(i,set).getElementsByTagName("ans").item(0).getTextContent());
-			System.out.println("Explanation : " + getQuestion(i,set).getElementsByTagName("exp").item(0).getTextContent());
-			*/ 
 }
