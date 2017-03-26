@@ -1,6 +1,8 @@
 package controlers;
 
 import java.io.IOException;
+
+import core.AuthentificationUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +12,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 
 public class StartControler {
+	
+	private AuthentificationUser userlist;
 	
 	@FXML BorderPane Main_Pane;
 	@FXML TextField UsernameSI;
@@ -27,6 +31,14 @@ public class StartControler {
 	
 	public void setmainpane(BorderPane b){
 		this.Main_Pane=b;
+	}
+	
+	public void signInClic() {
+		if (UsernameSI.getText().equals(null) || PassWordSI.getText().equals(null)) {
+			
+		} else {
+			
+		}
 	}
 
 }
