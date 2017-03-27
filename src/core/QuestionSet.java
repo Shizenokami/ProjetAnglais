@@ -23,5 +23,22 @@ public class QuestionSet {
 	public ArrayList<Integer> getTheme(){
 		return theme;
 	}
+	public ArrayList<Element> getElement(){
+		return questions;
+	}
+	
+	public String getTaskElement(int position){
+		return questions.get(position).getElementsByTagName("task").item(0).getTextContent();
+	}
+	public String getVarElement(int num,int position){
+		return questions.get(position).getElementsByTagName("var").item(num).getTextContent();
+	}
+	public String getAnsElement(int position){
+		return questions.get(position).getElementsByTagName("ans").item(0).getTextContent();
+	}
+	public String getExpElement(int position){
+		return questions.get(position).getElementsByTagName("exp").item(0).getTextContent();
+	}
+	
 	
 }

@@ -1,13 +1,14 @@
 package core;
 
 import java.util.ArrayList;
-
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+
+import controlers.MainControler;
+
 
 
 
@@ -23,6 +24,13 @@ public class QuestionsLoad {
 	private NodeList set1;
 	private NodeList set2;
 	
+	public static void main(String argv[]) {
+		QuestionsLoad qu = new QuestionsLoad();
+		QuestionSet El = qu.getOneCategoryQuestions(20,1);
+		for (Element e:El.getElement()){
+			System.out.println("question : "+e.getElementsByTagName("task").item(0).getTextContent());
+			System.out.println("reponse : "+ e.getElementsByTagName("var").item(Integer.parseInt(e.getElementsByTagName("ans").item(0).getTextContent())-1).getTextContent());}
+	}
 	public QuestionsLoad() {
 		loadQuestions("asset/File1.xml","asset/File2.xml");
 	}

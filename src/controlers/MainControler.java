@@ -4,13 +4,15 @@ import java.io.IOException;
 
 
 import controlers.StartControler;
+import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
-public class MainControler {
+public class MainControler  {
 
 		private @FXML BorderPane Main_Pane;
 		
@@ -49,4 +51,5 @@ public class MainControler {
 			MainControler main = new MainControler();
 			main.goHome();
 		}
+
 }
