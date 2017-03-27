@@ -4,7 +4,6 @@ import java.io.IOException;
 
 
 import controlers.StartControler;
-import core.AuthentificationUser;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +18,7 @@ public class MainControler {
 			//System.out.println("test");
 			 try {
 		            FXMLLoader loader = new FXMLLoader();
-		            loader.setLocation(MainApp.class.getResource("../views/StartWindow.fxml"));
+		            //loader.setLocation(MainApp.class.getResource("../views/StartWindow.fxml"));
 		            AnchorPane StartWindow = (AnchorPane) loader.load();
 		            Main_Pane.setCenter(StartWindow);
 		            StartControler v = loader.getController();
@@ -38,7 +37,7 @@ public class MainControler {
 			//System.out.println("test");
 			 try {
 		            FXMLLoader loader = new FXMLLoader();
-		            loader.setLocation(MainApp.class.getResource("../views/AboutWindow.fxml"));
+		            //loader.setLocation(MainApp.class.getResource("../views/AboutWindow.fxml"));
 		            AnchorPane AboutWindow = (AnchorPane) loader.load();
 		            Main_Pane.setCenter(AboutWindow);
 		        } catch (IOException e) {

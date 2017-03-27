@@ -1,20 +1,17 @@
 package controlers;
 
-import java.io.IOException;
-
+import org.w3c.dom.Element;
 import core.AuthentificationUser;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 
 public class StartControler {
 	
 	private AuthentificationUser userlist;
+	private AbstractUserControler user;
 	
 	@FXML BorderPane Main_Pane;
 	@FXML TextField UsernameSI;
@@ -39,9 +36,14 @@ public class StartControler {
 		if (UsernameSI.getText().equals(null) || PassWordSI.getText().equals(null)) {
 			ErrorText.setText("Please enter your username and password to login.");
 		} else {
-			if ( userlist.signIn(UsernameSI.getText(), PassWordSI.getText()) == null) {
+			Element userelement;
+			if ( (userelement = userlist.signIn(UsernameSI.getText(), PassWordSI.getText())) == null) {
 				ErrorText.setText("Your account or your identifiers do not exist.\nPlease Sign-up or check if your username and password are correct.");
+			} else {
+				userelement = userlist.signIn(UsernameSI.getText(), PassWordSI.getText());
+				user.
 			}
+			
 		}
 	}
 	
@@ -51,7 +53,9 @@ public class StartControler {
 		} else if (!PassWordSU.getText().equals(ConfirmPassSU.getText())) {
 			ErrorText.setText("Incorrect password repetition.");
 		} else {
-			userlist.signUp(UsernameSU.getText(), EmailAddr.getText(), PassWordSU.getText());
+			if (userlist.signUp(UsernameSU.getText(), EmailAddr.getText(), PassWordSU.getText())) {
+				ErrorText.setText("You signed-up well, now please sign-in.");
+			}
 		}
 	}
 
