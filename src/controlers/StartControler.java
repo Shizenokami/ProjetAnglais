@@ -1,17 +1,20 @@
 package controlers;
 
+import java.io.IOException;
+
 import org.w3c.dom.Element;
 import core.AuthentificationUser;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 
 public class StartControler {
 	
 	private AuthentificationUser userlist;
-	private AbstractUserControler user;
 	
 	@FXML BorderPane Main_Pane;
 	@FXML TextField UsernameSI;
@@ -34,7 +37,8 @@ public class StartControler {
 	
 	public void clickSignIn() {
 		//if (UsernameSI.getText()==null || PassWordSI.getText()==null) {
-			ErrorText.setText("Please enter your username and password to login.");
+			//ErrorText.setText("Please enter your username and password to login.");
+		loadTeacher();
 		/*} else {
 			Element userelement;
 			if ( (userelement = userlist.signIn(UsernameSI.getText(), PassWordSI.getText())) == null) {
@@ -56,6 +60,35 @@ public class StartControler {
 				ErrorText.setText("You signed-up well, now please sign-in.");
 			}
 		}*/
+	}
+	
+	
+	public void loadStudent() {
+		try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("../views/StudentWindow.fxml"));
+            AnchorPane StudentWindow = (AnchorPane) loader.load();
+            Main_Pane.setCenter(StudentWindow);
+            StartControler v = loader.getController();
+            v.setmainpane(Main_Pane);
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
+	
+	public void loadTeacher() {
+		try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("../views/TeacherWindow.fxml"));
+            AnchorPane TeacherWindow = (AnchorPane) loader.load();
+            Main_Pane.setCenter(TeacherWindow);
+            StartControler v = loader.getController();
+            v.setmainpane(Main_Pane);
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 	}
 
 }

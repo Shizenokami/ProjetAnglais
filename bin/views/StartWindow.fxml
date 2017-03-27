@@ -41,6 +41,6 @@
         <DropShadow />
       </effect>
     </Button>
-    <Text fx:id="ErrorText" layoutX="318.0" layoutY="522.0" scaleX="1.6714386427801096" scaleY="2.1904062835568925" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+    <Text fx:id="ErrorText" layoutX="245.0" layoutY="522.0" scaleX="1.6714386427801096" scaleY="2.1904062835568925" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
   </children>
 </AnchorPane>
