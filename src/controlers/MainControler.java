@@ -4,6 +4,7 @@ import java.io.IOException;
 
 
 import controlers.StartControler;
+import core.AuthentificationUser;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -43,5 +44,10 @@ public class MainControler {
 		        } catch (IOException e) {
 		            e.printStackTrace();
 		        }
+		}
+		
+		public static void main(String argv[]) {
+			MainControler main = new MainControler();
+			main.goHome();
 		}
 }
