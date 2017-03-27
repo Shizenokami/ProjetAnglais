@@ -32,10 +32,10 @@ public class StartControler {
 		this.Main_Pane=b;
 	}
 	
-	public void signInClic() {
-		if (UsernameSI.getText().equals(null) || PassWordSI.getText().equals(null)) {
+	public void clickSignIn() {
+		//if (UsernameSI.getText()==null || PassWordSI.getText()==null) {
 			ErrorText.setText("Please enter your username and password to login.");
-		} else {
+		/*} else {
 			Element userelement;
 			if ( (userelement = userlist.signIn(UsernameSI.getText(), PassWordSI.getText())) == null) {
 				ErrorText.setText("Your account or your identifiers do not exist.\nPlease Sign-up or check if your username and password are correct.");
@@ -43,19 +43,19 @@ public class StartControler {
 				userelement = userlist.signIn(UsernameSI.getText(), PassWordSI.getText());
 			}
 			
-		}
+		}*/
 	}
 	
-	public void SignUpClic() {
-		if (UsernameSU.getText().equals(null) || PassWordSU.getText().equals(null) || EmailAddr.getText().equals(null) || ConfirmPassSU.getText().equals(null)) {
-			ErrorText.setText("Please fullfill the text areas to sign-up.");
-		} else if (!PassWordSU.getText().equals(ConfirmPassSU.getText())) {
+	public void clickSignUp() {
+		/*if (UsernameSU.getText().equals(null) || PassWordSU.getText().equals(null) || EmailAddr.getText().equals(null) || ConfirmPassSU.getText().equals(null)) {
+			ErrorText.setText("Please fullfill the text areas to sign-up."); */
+		//} else if (!PassWordSU.getText().equals(ConfirmPassSU.getText())) {
 			ErrorText.setText("Incorrect password repetition.");
-		} else {
+		/*} else {
 			if (userlist.signUp(UsernameSU.getText(), EmailAddr.getText(), PassWordSU.getText())) {
 				ErrorText.setText("You signed-up well, now please sign-in.");
 			}
-		}
+		}*/
 	}
 
 }

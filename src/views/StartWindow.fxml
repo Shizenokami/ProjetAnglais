@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controlers.StartControler">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.StartControler">
   <children>
     <TextField fx:id="UsernameSI" layoutX="14.0" layoutY="132.0" prefHeight="31.0" prefWidth="131.0" />
     <Button fx:id="Button_SignIn" defaultButton="true" layoutX="80.0" layoutY="272.0" mnemonicParsing="false" onAction="#clickSignIn" style="-fx-background-color: #608456;" text="Sign in">
@@ -41,6 +41,6 @@
         <DropShadow />
       </effect>
     </Button>
-    <Text fx:id="ErrorText" layoutX="101.0" layoutY="522.0" scaleX="1.6714386427801096" scaleY="2.1904062835568925" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
+    <Text fx:id="ErrorText" layoutX="245.0" layoutY="522.0" scaleX="1.6714386427801096" scaleY="2.1904062835568925" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
   </children>
 </AnchorPane>

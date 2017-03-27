@@ -47,9 +47,8 @@ public class MainControler  {
 		        }
 		}
 		
-		public static void main(String argv[]) {
-			MainControler main = new MainControler();
-			main.goHome();
+		public void sampleAction() {
+			
 		}
 
 }
