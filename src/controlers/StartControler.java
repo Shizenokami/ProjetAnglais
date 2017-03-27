@@ -41,7 +41,6 @@ public class StartControler {
 				ErrorText.setText("Your account or your identifiers do not exist.\nPlease Sign-up or check if your username and password are correct.");
 			} else {
 				userelement = userlist.signIn(UsernameSI.getText(), PassWordSI.getText());
-				user.
 			}
 			
 		}
