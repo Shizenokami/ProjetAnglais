@@ -18,12 +18,12 @@ import org.w3c.dom.NodeList;
  * to get an explanation you need to apply getElementsByTagName("exp").item(0).getTextContent()
  */
 
-public class QuestionsSet {
+public class QuestionsLoad {
 
 	private NodeList set1;
 	private NodeList set2;
 	
-	public QuestionsSet() {
+	public QuestionsLoad() {
 		loadQuestions("asset/File1.xml","asset/File2.xml");
 	}
 	
@@ -58,8 +58,8 @@ public class QuestionsSet {
 			return set2;
 	}
 	
-	public ArrayList<Element> getRandomNumberQuestions(int i,int set){
-		ArrayList<Element> myQuestion=new ArrayList<Element>();
+	public QuestionSet getRandomNumberQuestions(int i,int set){
+		QuestionSet myQuestions=new QuestionSet();
 		ArrayList<Integer> numbers=new ArrayList<Integer>();
 		
 		for (int l=0;l<i;l++){
@@ -71,28 +71,31 @@ public class QuestionsSet {
 					if (num==k)
 						c++;
 			} while  (c!=0);
-			myQuestion.add(getQuestion(num,set));
+			myQuestions.addQuestion(getQuestion(num,set),num%20);
 			numbers.add(num);
 		}
-		return myQuestion;
+		return myQuestions;
 	}
 	
-	public ArrayList<Element> getAllCategoryQuestions(int set){
+	
+	
+	public QuestionSet getAllCategoryQuestions(int set){
 		int num=(int)(Math.random()*30);
-		ArrayList<Element> myQuestion=new ArrayList<Element>();
+		int offset=(int)(Math.random()*20);
+		QuestionSet myQuestions=new QuestionSet();
 		
-		for (int l=num*30;l<num*30+20;l++){
-			myQuestion.add(getQuestion(l,set));
+		for (int l=num*20;l<num*20+20;l++){
+			myQuestions.addQuestion(getQuestion((l+offset)%20+num*20,set),(l+offset)%20);
 		}
-		return myQuestion;
+		return myQuestions;
 	}
 	
-	public ArrayList<Element> getOneCategoryQuestions(int i,int set){
-		ArrayList<Element> myQuestion=new ArrayList<Element>();
-		for (int l=i-1;l<600;l+=20){
-			myQuestion.add(getQuestion(l,set));
+	public QuestionSet getOneCategoryQuestions(int i,int set){
+		QuestionSet myQuestions=new QuestionSet();
+		for (int l=i;l<600;l+=20){
+			myQuestions.addQuestion(getQuestion(l,set),i);
 		}
-		return myQuestion;
+		return myQuestions;
 		
 	}
 }
