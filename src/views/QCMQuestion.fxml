@@ -44,6 +44,25 @@
       <Text fx:id="answerC" layoutX="138.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="heh" wrappingWidth="415.4765625" />
       <Text fx:id="answerB" layoutX="138.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="heh" wrappingWidth="415.4765625" />
       <Text fx:id="answerA" layoutX="138.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="heh" wrappingWidth="415.4765625" />
-      <Text fx:id="question" layoutX="56.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="heh" wrappingWidth="712.4765625" />
+      <Text fx:id="question" layoutX="56.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="heh" wrappingWidth="712.4765625" />
+      <Button fx:id="Button_Validate" defaultButton="true" layoutX="138.0" layoutY="390.0" mnemonicParsing="false" onAction="#clickValidate" prefHeight="46.0" prefWidth="183.0" style="-fx-background-color: #608456;" text="Validate">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" fx:id="x2121" />
+         </font>
+      </Button>
+      <Text fx:id="explanation" layoutX="118.0" layoutY="526.0" strokeType="OUTSIDE" strokeWidth="0.0" text="heh" wrappingWidth="588.4765625" />
+      <Text fx:id="answers" layoutX="118.0" layoutY="474.0" strokeType="OUTSIDE" strokeWidth="0.0" text="heh" wrappingWidth="550.4765625" />
+      <Text fx:id="positionqcm" layoutX="428.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="heh" wrappingWidth="415.4765625" />
+      <Button fx:id="Button_Next" defaultButton="true" layoutX="453.0" layoutY="390.0" mnemonicParsing="false" onAction="#clickNext" prefHeight="46.0" prefWidth="183.0" style="-fx-background-color: #608456;" text="Next">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" fx:id="x21211" />
+         </font>
+      </Button>
   </children>
 </AnchorPane>

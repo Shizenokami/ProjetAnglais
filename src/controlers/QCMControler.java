@@ -13,7 +13,8 @@ import javafx.scene.text.Text;
 
 public class QCMControler {
 
-	
+	private int choice=-1;
+	private boolean validate=false;
 	private QuestionSet questionSet;
 	private Stat studentStat;
 	private int position=0;
@@ -23,12 +24,15 @@ public class QCMControler {
 	@FXML Text answerB;
 	@FXML Text answerC;
 	@FXML Text answerD;
-	@FXML Text correctAnswer;
+	@FXML Text explanation;
+	@FXML Text answers;
+	@FXML Text positionqcm;
 	@FXML Button Button_A;
 	@FXML Button Button_B;
 	@FXML Button Button_C;
 	@FXML Button Button_D;
-	
+	@FXML Button Button_Next;
+	@FXML Button Button_Validate;
 	
 	
 	public QCMControler(){
@@ -43,6 +47,11 @@ public class QCMControler {
 		answerB.setText(questionSet.getVarElement(1,position));
 		answerC.setText(questionSet.getVarElement(2,position));
 		answerD.setText(questionSet.getVarElement(3,position));
+		answers.setText("");
+		explanation.setText("");
+		positionqcm.setText("Question : "+(position+1)+"/"+questionSet.getElement().size());
+		choice=-1;
+		validate=false;
 	}
 	
 	
@@ -58,47 +67,50 @@ public class QCMControler {
 		this.studentStat=studentStat;
 	}
 	
-	public String getQuestion(){
-		return questionSet.getTaskElement(position);
-	}
-	public String getVarA(){
-		return questionSet.getVarElement(0,position);
-	}
-	public String getVarB(){
-		return questionSet.getVarElement(1,position);
-	}
-	public String getVarC(){
-		return questionSet.getVarElement(2,position);
-	}
-	public String getVarD(){
-		return questionSet.getVarElement(3,position);
-	}
 	public String getAns(){
 		return questionSet.getVarElement(Integer.parseInt((questionSet.getAnsElement(position)))-1,position);
 	}
 	public String getExplanation(){
 		return questionSet.getExpElement(position);
 	}
+	public void printSolution(){//si reel exam pas de pint de solution
+		String s="";
+		if (choice==(Integer.parseInt(questionSet.getAnsElement(position))-1))
+			s+="Correct, ";
+		answers.setText(s+"answer : "+getAns());
+		explanation.setText(getExplanation());
+	}
+	
+	
+	public void clickValidate(){
+		if (choice==-1)
+			return;
+		studentStat.newQuestion(choice==(Integer.parseInt(questionSet.getAnsElement(position))-1), questionSet.getTheme().get(position));
+		printSolution();
+		position++;
+		validate=true;
+	}
+	
+	public void clickNext(){
+		if (validate)
+			update();
+	}
 	
 	public void clickA(){
-		studentStat.newQuestion(0==(Integer.parseInt(questionSet.getAnsElement(position))-1), questionSet.getTheme().get(position));
-		position++;
-		update();
+		if (!validate)
+			choice =0;
 	}
 	public void clickB(){
-		studentStat.newQuestion(1==(Integer.parseInt(questionSet.getAnsElement(position))-1), questionSet.getTheme().get(position));
-		position++;
-		update();
+		if (!validate)
+			choice =1;
 	}
 	public void clickC(){
-		studentStat.newQuestion(2==(Integer.parseInt(questionSet.getAnsElement(position))-1), questionSet.getTheme().get(position));
-		position++;
-		update();
+		if (!validate)
+			choice =2;
 	}
 	public void clickD(){
-		studentStat.newQuestion((3==Integer.parseInt(questionSet.getAnsElement(position))-1), questionSet.getTheme().get(position));
-		position++;
-		update();
+		if (!validate)
+			choice =3;
 	}
 	public void loadScore() {
 		try {
