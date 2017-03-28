@@ -12,3 +12,4 @@
 hs_err_pid*
 # assets : we don't wan't lawsuits, it's just a school project :)
 asset/*
+/bin/

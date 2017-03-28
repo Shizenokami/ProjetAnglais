@@ -9,6 +9,7 @@
     -fx-padding: 12 30 12 30;
     -fx-text-fill: white;
     -fx-font-size: 12px;
+    -fx-font-weight:bold;
 }
 .rich-blue Text {
     -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 0, 0.0 , 0 , 1);

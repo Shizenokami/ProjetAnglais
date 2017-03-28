@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.w3c.dom.Element;
 import core.AuthentificationUser;
+import core.Stat;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -14,13 +15,15 @@ import javafx.scene.text.Text;
 
 public class StartControler {
 	
-	private AuthentificationUser userlist;
+	
+	private AuthentificationUser auth;
+	private Element userelement;
 	
 	@FXML BorderPane Main_Pane;
 	@FXML TextField UsernameSI;
 	@FXML TextField UsernameSU;
-	@FXML TextField PassWordSI;
-	@FXML TextField PassWordSU;
+	@FXML TextField PasswordSI;
+	@FXML TextField PasswordSU;
 	@FXML TextField EmailAddr;
 	@FXML TextField ConfirmPassSU;
 	@FXML Button Button_SignIn;
@@ -28,7 +31,7 @@ public class StartControler {
 	@FXML Text ErrorText;
 	
 	public StartControler() {
-		
+		auth=new AuthentificationUser("asset/usrs.xml");
 	}
 	
 	public void setmainpane(BorderPane b){
@@ -42,24 +45,31 @@ public class StartControler {
 		/*} else {
 			Element userelement;
 			if ( (userelement = userlist.signIn(UsernameSI.getText(), PassWordSI.getText())) == null) {
+		if (UsernameSI.getText().equals("") || PasswordSI.getText().equals("")) {
+			ErrorText.setText("Please enter your username and password to login.");
+		} else {
+			if ( (userelement = auth.signIn(UsernameSI.getText(), PasswordSI.getText())) == null) {
+>>>>>>> 30bf70a86fb891688056f3d52e44fbddd8f6953a
 				ErrorText.setText("Your account or your identifiers do not exist.\nPlease Sign-up or check if your username and password are correct.");
 			} else {
-				userelement = userlist.signIn(UsernameSI.getText(), PassWordSI.getText());
+				loadStudent();
 			}
 			
 		}*/
 	}
 	
 	public void clickSignUp() {
-		/*if (UsernameSU.getText().equals(null) || PassWordSU.getText().equals(null) || EmailAddr.getText().equals(null) || ConfirmPassSU.getText().equals(null)) {
-			ErrorText.setText("Please fullfill the text areas to sign-up."); */
-		//} else if (!PassWordSU.getText().equals(ConfirmPassSU.getText())) {
+		if (UsernameSU.getText().equals("") || PasswordSU.getText().equals("") || EmailAddr.getText().equals("") || ConfirmPassSU.getText().equals("")) {
+			ErrorText.setText("Please fullfill the text areas to sign-up."); 
+		} else if (!PasswordSU.getText().equals(ConfirmPassSU.getText())) {
 			ErrorText.setText("Incorrect password repetition.");
-		/*} else {
-			if (userlist.signUp(UsernameSU.getText(), EmailAddr.getText(), PassWordSU.getText())) {
+		} else {
+			if (auth.signUp(UsernameSU.getText(), EmailAddr.getText(), PasswordSU.getText())) {
 				ErrorText.setText("You signed-up well, now please sign-in.");
 			}
-		}*/
+			else
+				ErrorText.setText("Account already existing");
+		}
 	}
 	
 	
@@ -69,7 +79,8 @@ public class StartControler {
             loader.setLocation(MainApp.class.getResource("../views/StudentWindow.fxml"));
             AnchorPane StudentWindow = (AnchorPane) loader.load();
             Main_Pane.setCenter(StudentWindow);
-            StartControler v = loader.getController();
+            StudentUserControler v = loader.getController();
+            v.setStat(userelement);
             v.setmainpane(Main_Pane);
             
         } catch (IOException e) {
