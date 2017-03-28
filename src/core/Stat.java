@@ -13,10 +13,11 @@ public class Stat {
 	private int  nbThemeCorrectAnswer[];
 	
 	public Stat(Element usr){
-		nbTotalquestion=Integer.parseInt(usr.getElementsByTagName("totalQuestion").item(0).getTextContent());
+		System.out.println(usr.getElementsByTagName("totalQuestion").item(0).getTextContent());
+		/*nbTotalquestion=Integer.parseInt(usr.getElementsByTagName("totalQuestion").item(0).getTextContent());
 		nbCorrectAnswer=Integer.parseInt(usr.getElementsByTagName("totalQuestion").item(0).getTextContent());
 		nbThemeTotalquestion=new int[20];
-		nbThemeCorrectAnswer=new int[20];
+		nbThemeCorrectAnswer=new int[20];*/
 	}
 	
 	

@@ -11,18 +11,20 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 public class AuthentificationUser {
 	
 	private NodeList setUser;
+	private NodeList users;
 	private Document doc;
 	private String pathDoc;
 	
 	public static void main(String argv[]) {
 		AuthentificationUser auth=new AuthentificationUser("asset/usrs.xml");
-		auth.signUp("meuh","else","fin");
-		System.out.println(auth.signIn("meuh", "fin"));
+		System.out.println(auth.signIn("meuh","fin"));
+		auth.signUp("mea","elses","fin");
 	}
 	
 	public AuthentificationUser(String path){
@@ -30,6 +32,10 @@ public class AuthentificationUser {
 		loadUsers(pathDoc);
 	}
 	
+	public NodeList getNodes(){
+		System.out.println("user"+users );
+		return users;
+	}
 	
 	public void loadUsers(String pathUser){
 		
@@ -40,7 +46,7 @@ public class AuthentificationUser {
 			
 			doc=docBuilder.parse(pathUser);
 			setUser = doc.getElementsByTagName("users");
-			
+			users = doc.getElementsByTagName("user");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}	
@@ -99,11 +105,14 @@ public class AuthentificationUser {
 	}
 	
 	public Element signIn(String userName,String password){
-		for (int temp = 0; temp < setUser.getLength(); temp++) {
-			Element usr=(Element) setUser.item(temp);
-			if ( usr.getElementsByTagName("userName").item(0).getTextContent().equals(userName) && usr.getElementsByTagName("password").item(0).getTextContent().equals(password))
-				return usr;
+		NodeList usrs = doc.getElementsByTagName("user");
+		Element usr;
+		for (int temp = 0; temp < usrs.getLength(); temp++) {
+			usr=(Element) usrs.item(temp);
+				if ( usr.getElementsByTagName("userName").item(0).getTextContent().equals(userName) && usr.getElementsByTagName("password").item(0).getTextContent().equals(password)){
+					return usr;}
 		}
+		System.out.println("f");
 		return null;
 	}
 	

@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.w3c.dom.Element;
 import core.AuthentificationUser;
+import core.Stat;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -15,6 +16,9 @@ import javafx.scene.text.Text;
 public class StartControler {
 	
 	private AuthentificationUser userlist;
+	
+	private AuthentificationUser auth;
+	private Element userelement;
 	
 	@FXML BorderPane Main_Pane;
 	@FXML TextField UsernameSI;
@@ -28,7 +32,8 @@ public class StartControler {
 	@FXML Text ErrorText;
 	
 	public StartControler() {
-		
+		auth=new AuthentificationUser("asset/usrs.xml");
+		userelement=auth.signIn("meuh", "fin");
 	}
 	
 	public void setmainpane(BorderPane b){
@@ -37,10 +42,9 @@ public class StartControler {
 	
 	public void clickSignIn() {
 		//if (UsernameSI.getText()==null || PassWordSI.getText()==null) {
-			//ErrorText.setText("Please enter your username and password to login.");
+		//	ErrorText.setText("Please enter your username and password to login.");
 		loadTeacher();
 		/*} else {
-			Element userelement;
 			if ( (userelement = userlist.signIn(UsernameSI.getText(), PassWordSI.getText())) == null) {
 				ErrorText.setText("Your account or your identifiers do not exist.\nPlease Sign-up or check if your username and password are correct.");
 			} else {
@@ -51,6 +55,7 @@ public class StartControler {
 	}
 	
 	public void clickSignUp() {
+		loadStudent();
 		/*if (UsernameSU.getText().equals(null) || PassWordSU.getText().equals(null) || EmailAddr.getText().equals(null) || ConfirmPassSU.getText().equals(null)) {
 			ErrorText.setText("Please fullfill the text areas to sign-up."); */
 		//} else if (!PassWordSU.getText().equals(ConfirmPassSU.getText())) {
@@ -69,7 +74,8 @@ public class StartControler {
             loader.setLocation(MainApp.class.getResource("../views/StudentWindow.fxml"));
             AnchorPane StudentWindow = (AnchorPane) loader.load();
             Main_Pane.setCenter(StudentWindow);
-            StartControler v = loader.getController();
+            StudentUserControler v = loader.getController();
+            v.setStat(userelement);
             v.setmainpane(Main_Pane);
             
         } catch (IOException e) {

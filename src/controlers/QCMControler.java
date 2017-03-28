@@ -4,29 +4,41 @@ import core.QuestionSet;
 import core.Stat;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 
 public class QCMControler {
 
+	
 	private QuestionSet questionSet;
 	private Stat studentStat;
-	private int position;
-	
-	/*@FXML Text question;
+	private int position=0;
+	@FXML BorderPane Main_Pane;
+	@FXML Text question;
 	@FXML Text answerA;
 	@FXML Text answerB;
 	@FXML Text answerC;
 	@FXML Text answerD;
 	@FXML Text correctAnswer;
-	@FXML Button Button_SignIn;
-	@FXML Button Button_SignIn;*/
+	@FXML Button Button_A;
+	@FXML Button Button_B;
+	@FXML Button Button_C;
+	@FXML Button Button_D;
 	
-	public QCMControler(QuestionSet questionSet,Stat studentStat){
+	
+	
+	public QCMControler(){
+	}
+	
+	public void setmainpane(BorderPane b){
+		this.Main_Pane=b;
+	}
+	
+	public void setParam(QuestionSet questionSet,Stat studentStat){
 		this.questionSet=questionSet;
 		this.studentStat=studentStat;
-		position=0;
-		
 	}
+	
 	public String getQuestion(){
 		return questionSet.getTaskElement(position);
 	}
@@ -49,19 +61,19 @@ public class QCMControler {
 		return questionSet.getExpElement(position);
 	}
 	
-	public void chooseA(){
+	public void clickA(){
 		position++;
 		studentStat.newQuestion(0==Integer.parseInt(questionSet.getAnsElement(position-1)), questionSet.getTheme().get(position-1));
 	}
-	public void chooseB(){
+	public void clickB(){
 		position++;
 		studentStat.newQuestion(1==Integer.parseInt(questionSet.getAnsElement(position-1)), questionSet.getTheme().get(position-1));
 	}
-	public void chooseC(){
+	public void clickC(){
 		position++;
 		studentStat.newQuestion(2==(Integer.parseInt(questionSet.getAnsElement(position-1))-1), questionSet.getTheme().get(position-1));
 	}
-	public void chooseD(){
+	public void clickD(){
 		position++;
 		studentStat.newQuestion(3==Integer.parseInt(questionSet.getAnsElement(position-1)), questionSet.getTheme().get(position-1));
 	}

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.QCMControler">
+  <children>
+    <Button fx:id="Button_A" defaultButton="true" layoutX="610.0" layoutY="119.0" mnemonicParsing="false" onAction="#clicA" prefHeight="46.0" prefWidth="52.0" style="-fx-background-color: #608456;" text="A">
+      <effect>
+        <DropShadow />
+      </effect>
+      <font>
+        <Font name="System Bold" size="15.0" fx:id="x2" />
+      </font>
+    </Button>
+      <Button fx:id="Button_B" defaultButton="true" layoutX="610.0" layoutY="183.0" mnemonicParsing="false" onAction="#clicB" prefHeight="46.0" prefWidth="52.0" style="-fx-background-color: #608456;" text="B">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" fx:id="x21" />
+         </font>
+      </Button>
+      <Button fx:id="Button_C" defaultButton="true" layoutX="610.0" layoutY="244.0" mnemonicParsing="false" onAction="#clicC" prefHeight="46.0" prefWidth="52.0" style="-fx-background-color: #608456;" text="C">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" fx:id="x211" />
+         </font>
+      </Button>
+      <Button fx:id="Button_D" defaultButton="true" layoutX="610.0" layoutY="308.0" mnemonicParsing="false" onAction="#clicD" prefHeight="46.0" prefWidth="52.0" style="-fx-background-color: #608456;" text="D">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold" size="15.0" fx:id="x212" />
+         </font>
+      </Button>
+      <Text fx:id="answerD" layoutX="138.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="heh" wrappingWidth="415.4765625" />
+      <Text fx:id="answerC" layoutX="138.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="heh" wrappingWidth="415.4765625" />
+      <Text fx:id="answerB" layoutX="138.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="heh" wrappingWidth="415.4765625" />
+      <Text fx:id="answerA" layoutX="138.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="heh" wrappingWidth="415.4765625" />
+      <Text fx:id="question" layoutX="56.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="heh" wrappingWidth="712.4765625" />
+  </children>
+</AnchorPane>
