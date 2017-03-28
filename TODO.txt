@@ -1,0 +1,6 @@
+Finir le systeme d'utilisateurs (=> Controler+Model)
+Finir la fenetre de statistiques
+Faire la fenetre QCM
+Finir la mise en forme (presque fini en vrai dès que scenebuilder arrete de planter)
+
+Tenter de lancer un qcm?
