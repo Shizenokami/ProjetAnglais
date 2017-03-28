@@ -15,7 +15,6 @@ import javafx.scene.text.Text;
 
 public class StartControler {
 	
-	private AuthentificationUser userlist;
 	
 	private AuthentificationUser auth;
 	private Element userelement;
@@ -23,8 +22,8 @@ public class StartControler {
 	@FXML BorderPane Main_Pane;
 	@FXML TextField UsernameSI;
 	@FXML TextField UsernameSU;
-	@FXML TextField PassWordSI;
-	@FXML TextField PassWordSU;
+	@FXML TextField PasswordSI;
+	@FXML TextField PasswordSU;
 	@FXML TextField EmailAddr;
 	@FXML TextField ConfirmPassSU;
 	@FXML Button Button_SignIn;
@@ -33,7 +32,6 @@ public class StartControler {
 	
 	public StartControler() {
 		auth=new AuthentificationUser("asset/usrs.xml");
-		userelement=auth.signIn("meuh", "fin");
 	}
 	
 	public void setmainpane(BorderPane b){
@@ -41,30 +39,28 @@ public class StartControler {
 	}
 	
 	public void clickSignIn() {
-		/*if (UsernameSI.getText()==null || PassWordSI.getText()==null) {
-			ErrorText.setText("Please enter your username and password to login.");*/
-		loadTeacher();
-		/*} else {
-			if ( (userelement = userlist.signIn(UsernameSI.getText(), PassWordSI.getText())) == null) {
+		if (UsernameSI.getText().equals(null) || PasswordSI.getText().equals(null)) {
+			ErrorText.setText("Please enter your username and password to login.");
+		} else {
+			if ( (userelement = auth.signIn(UsernameSI.getText(), PasswordSI.getText())) == null) {
 				ErrorText.setText("Your account or your identifiers do not exist.\nPlease Sign-up or check if your username and password are correct.");
 			} else {
-				userelement = userlist.signIn(UsernameSI.getText(), PassWordSI.getText());
+				loadStudent();
 			}
 			
-		}*/
+		}
 	}
 	
 	public void clickSignUp() {
-		loadStudent();
-		/*if (UsernameSU.getText().equals(null) || PassWordSU.getText().equals(null) || EmailAddr.getText().equals(null) || ConfirmPassSU.getText().equals(null)) {
+		if (UsernameSU.getText().equals(null) || PasswordSU.getText().equals(null) || EmailAddr.getText().equals(null) || ConfirmPassSU.getText().equals(null)) {
 			ErrorText.setText("Please fullfill the text areas to sign-up."); 
-		} else if (!PassWordSU.getText().equals(ConfirmPassSU.getText())) {
+		} else if (!PasswordSU.getText().equals(ConfirmPassSU.getText())) {
 			ErrorText.setText("Incorrect password repetition.");
 		} else {
-			if (userlist.signUp(UsernameSU.getText(), EmailAddr.getText(), PassWordSU.getText())) {
+			if (auth.signUp(UsernameSU.getText(), EmailAddr.getText(), PasswordSU.getText())) {
 				ErrorText.setText("You signed-up well, now please sign-in.");
 			}
-		}*/
+		}
 	}
 	
 	
