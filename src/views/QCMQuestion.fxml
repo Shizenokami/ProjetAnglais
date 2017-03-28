@@ -8,7 +8,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.QCMControler">
   <children>
-    <Button fx:id="Button_A" defaultButton="true" layoutX="610.0" layoutY="119.0" mnemonicParsing="false" onAction="#clicA" prefHeight="46.0" prefWidth="52.0" style="-fx-background-color: #608456;" text="A">
+    <Button fx:id="Button_A" defaultButton="true" layoutX="610.0" layoutY="119.0" mnemonicParsing="false" onAction="#clickA" prefHeight="46.0" prefWidth="52.0" style="-fx-background-color: #608456;" text="A">
       <effect>
         <DropShadow />
       </effect>
@@ -16,7 +16,7 @@
         <Font name="System Bold" size="15.0" fx:id="x2" />
       </font>
     </Button>
-      <Button fx:id="Button_B" defaultButton="true" layoutX="610.0" layoutY="183.0" mnemonicParsing="false" onAction="#clicB" prefHeight="46.0" prefWidth="52.0" style="-fx-background-color: #608456;" text="B">
+      <Button fx:id="Button_B" defaultButton="true" layoutX="610.0" layoutY="183.0" mnemonicParsing="false" onAction="#clickB" prefHeight="46.0" prefWidth="52.0" style="-fx-background-color: #608456;" text="B">
          <effect>
             <DropShadow />
          </effect>
@@ -24,7 +24,7 @@
             <Font name="System Bold" size="15.0" fx:id="x21" />
          </font>
       </Button>
-      <Button fx:id="Button_C" defaultButton="true" layoutX="610.0" layoutY="244.0" mnemonicParsing="false" onAction="#clicC" prefHeight="46.0" prefWidth="52.0" style="-fx-background-color: #608456;" text="C">
+      <Button fx:id="Button_C" defaultButton="true" layoutX="610.0" layoutY="244.0" mnemonicParsing="false" onAction="#clickC" prefHeight="46.0" prefWidth="52.0" style="-fx-background-color: #608456;" text="C">
          <effect>
             <DropShadow />
          </effect>
@@ -32,7 +32,7 @@
             <Font name="System Bold" size="15.0" fx:id="x211" />
          </font>
       </Button>
-      <Button fx:id="Button_D" defaultButton="true" layoutX="610.0" layoutY="308.0" mnemonicParsing="false" onAction="#clicD" prefHeight="46.0" prefWidth="52.0" style="-fx-background-color: #608456;" text="D">
+      <Button fx:id="Button_D" defaultButton="true" layoutX="610.0" layoutY="308.0" mnemonicParsing="false" onAction="#clickD" prefHeight="46.0" prefWidth="52.0" style="-fx-background-color: #608456;" text="D">
          <effect>
             <DropShadow />
          </effect>

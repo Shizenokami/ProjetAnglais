@@ -41,8 +41,8 @@ public class StartControler {
 	}
 	
 	public void clickSignIn() {
-		//if (UsernameSI.getText()==null || PassWordSI.getText()==null) {
-		//	ErrorText.setText("Please enter your username and password to login.");
+		/*if (UsernameSI.getText()==null || PassWordSI.getText()==null) {
+			ErrorText.setText("Please enter your username and password to login.");*/
 		loadTeacher();
 		/*} else {
 			if ( (userelement = userlist.signIn(UsernameSI.getText(), PassWordSI.getText())) == null) {
@@ -57,10 +57,10 @@ public class StartControler {
 	public void clickSignUp() {
 		loadStudent();
 		/*if (UsernameSU.getText().equals(null) || PassWordSU.getText().equals(null) || EmailAddr.getText().equals(null) || ConfirmPassSU.getText().equals(null)) {
-			ErrorText.setText("Please fullfill the text areas to sign-up."); */
-		//} else if (!PassWordSU.getText().equals(ConfirmPassSU.getText())) {
+			ErrorText.setText("Please fullfill the text areas to sign-up."); 
+		} else if (!PassWordSU.getText().equals(ConfirmPassSU.getText())) {
 			ErrorText.setText("Incorrect password repetition.");
-		/*} else {
+		} else {
 			if (userlist.signUp(UsernameSU.getText(), EmailAddr.getText(), PassWordSU.getText())) {
 				ErrorText.setText("You signed-up well, now please sign-in.");
 			}

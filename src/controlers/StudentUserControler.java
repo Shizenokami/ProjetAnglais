@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.w3c.dom.Element;
 
 import core.AuthentificationUser;
+import core.QuestionSet;
 import core.QuestionsLoad;
 import core.Stat;
 import javafx.fxml.FXML;

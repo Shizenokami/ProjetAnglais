@@ -29,9 +29,20 @@ public class QCMControler {
 	
 	public QCMControler(){
 	}
+	public void setQuestion(){
+		question.setText(questionSet.getTaskElement(position));
+		answerA.setText(questionSet.getVarElement(0,position));
+		answerB.setText(questionSet.getVarElement(1,position));
+		answerC.setText(questionSet.getVarElement(2,position));
+		answerD.setText(questionSet.getVarElement(3,position));
+	}
+	
+	
 	
 	public void setmainpane(BorderPane b){
+		
 		this.Main_Pane=b;
+		setQuestion();
 	}
 	
 	public void setParam(QuestionSet questionSet,Stat studentStat){
@@ -62,19 +73,24 @@ public class QCMControler {
 	}
 	
 	public void clickA(){
+		studentStat.newQuestion(0==(Integer.parseInt(questionSet.getAnsElement(position))-1), questionSet.getTheme().get(position));
 		position++;
-		studentStat.newQuestion(0==Integer.parseInt(questionSet.getAnsElement(position-1)), questionSet.getTheme().get(position-1));
+		setQuestion();
 	}
 	public void clickB(){
+		studentStat.newQuestion(1==(Integer.parseInt(questionSet.getAnsElement(position))-1), questionSet.getTheme().get(position));
 		position++;
-		studentStat.newQuestion(1==Integer.parseInt(questionSet.getAnsElement(position-1)), questionSet.getTheme().get(position-1));
+		setQuestion();
 	}
 	public void clickC(){
+		studentStat.newQuestion(2==(Integer.parseInt(questionSet.getAnsElement(position))-1), questionSet.getTheme().get(position));
 		position++;
-		studentStat.newQuestion(2==(Integer.parseInt(questionSet.getAnsElement(position-1))-1), questionSet.getTheme().get(position-1));
+		setQuestion();
 	}
 	public void clickD(){
+		studentStat.newQuestion((3==Integer.parseInt(questionSet.getAnsElement(position))-1), questionSet.getTheme().get(position));
 		position++;
-		studentStat.newQuestion(3==Integer.parseInt(questionSet.getAnsElement(position-1)), questionSet.getTheme().get(position-1));
+		setQuestion();
 	}
+	
 }
