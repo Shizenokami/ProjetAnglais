@@ -71,15 +71,15 @@ public class AuthentificationUser {
 	}
 	
 	public boolean signUp(String userName,String mail,String password){
-		boolean bool=false;
+		boolean bool=true;
 		NodeList usrs = doc.getElementsByTagName("user");
 		for (int temp = 0; temp < usrs.getLength(); temp++) {
 			Element usr=(Element) usrs.item(temp);
 			if ( usr.getElementsByTagName("userName").item(0).getTextContent().equals(userName))
-				bool=true;
+				bool=false;
 				
 		}
-		if (!bool){
+		if (bool){
 			Element newUser= doc.createElement("user");
 			Element name=doc.createElement("userName");
 			Element email=doc.createElement("mail");

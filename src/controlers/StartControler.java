@@ -39,7 +39,7 @@ public class StartControler {
 	}
 	
 	public void clickSignIn() {
-		if (UsernameSI.getText().equals(null) || PasswordSI.getText().equals(null)) {
+		if (UsernameSI.getText().equals("") || PasswordSI.getText().equals("")) {
 			ErrorText.setText("Please enter your username and password to login.");
 		} else {
 			if ( (userelement = auth.signIn(UsernameSI.getText(), PasswordSI.getText())) == null) {
@@ -52,7 +52,7 @@ public class StartControler {
 	}
 	
 	public void clickSignUp() {
-		if (UsernameSU.getText().equals(null) || PasswordSU.getText().equals(null) || EmailAddr.getText().equals(null) || ConfirmPassSU.getText().equals(null)) {
+		if (UsernameSU.getText().equals("") || PasswordSU.getText().equals("") || EmailAddr.getText().equals("") || ConfirmPassSU.getText().equals("")) {
 			ErrorText.setText("Please fullfill the text areas to sign-up."); 
 		} else if (!PasswordSU.getText().equals(ConfirmPassSU.getText())) {
 			ErrorText.setText("Incorrect password repetition.");
@@ -60,6 +60,8 @@ public class StartControler {
 			if (auth.signUp(UsernameSU.getText(), EmailAddr.getText(), PasswordSU.getText())) {
 				ErrorText.setText("You signed-up well, now please sign-in.");
 			}
+			else
+				ErrorText.setText("Account already existing");
 		}
 	}
 	
