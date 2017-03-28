@@ -65,6 +65,7 @@ public class StudentUserControler {
             AnchorPane StudentWindow = (AnchorPane) loader.load();
             Main_Pane.setCenter(StudentWindow);
             QCMControler v = loader.getController();
+            userstat.resetLocal();
             v.setParam(db.getRandomNumberQuestions(20,1),userstat);
             v.setmainpane(Main_Pane);
             

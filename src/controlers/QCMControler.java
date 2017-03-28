@@ -1,9 +1,13 @@
 package controlers;
 
+import java.io.IOException;
+
 import core.QuestionSet;
 import core.Stat;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 
@@ -29,7 +33,11 @@ public class QCMControler {
 	
 	public QCMControler(){
 	}
-	public void setQuestion(){
+	public void update(){
+		if ((position)>=questionSet.getElement().size()){
+			loadScore();
+			return;
+		}
 		question.setText(questionSet.getTaskElement(position));
 		answerA.setText(questionSet.getVarElement(0,position));
 		answerB.setText(questionSet.getVarElement(1,position));
@@ -42,7 +50,7 @@ public class QCMControler {
 	public void setmainpane(BorderPane b){
 		
 		this.Main_Pane=b;
-		setQuestion();
+		update();
 	}
 	
 	public void setParam(QuestionSet questionSet,Stat studentStat){
@@ -75,22 +83,35 @@ public class QCMControler {
 	public void clickA(){
 		studentStat.newQuestion(0==(Integer.parseInt(questionSet.getAnsElement(position))-1), questionSet.getTheme().get(position));
 		position++;
-		setQuestion();
+		update();
 	}
 	public void clickB(){
 		studentStat.newQuestion(1==(Integer.parseInt(questionSet.getAnsElement(position))-1), questionSet.getTheme().get(position));
 		position++;
-		setQuestion();
+		update();
 	}
 	public void clickC(){
 		studentStat.newQuestion(2==(Integer.parseInt(questionSet.getAnsElement(position))-1), questionSet.getTheme().get(position));
 		position++;
-		setQuestion();
+		update();
 	}
 	public void clickD(){
 		studentStat.newQuestion((3==Integer.parseInt(questionSet.getAnsElement(position))-1), questionSet.getTheme().get(position));
 		position++;
-		setQuestion();
+		update();
 	}
-	
+	public void loadScore() {
+		try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("../views/ScoreWindow.fxml"));
+            AnchorPane StudentWindow = (AnchorPane) loader.load();
+            Main_Pane.setCenter(StudentWindow);
+            ScoreControler v = loader.getController();
+            v.setStat(studentStat.getLocalAns(),studentStat.getLocalQuest());
+            v.setmainpane(Main_Pane);
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+	}
 }
