@@ -38,7 +38,7 @@ public class StartControler {
 	public void clickSignIn() {
 		//if (UsernameSI.getText()==null || PassWordSI.getText()==null) {
 			//ErrorText.setText("Please enter your username and password to login.");
-		loadTeacher();
+		loadStudent();
 		/*} else {
 			Element userelement;
 			if ( (userelement = userlist.signIn(UsernameSI.getText(), PassWordSI.getText())) == null) {

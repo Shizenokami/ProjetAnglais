@@ -20,10 +20,10 @@ public class MainControler  {
 			//System.out.println("test");
 			 try {
 		            FXMLLoader loader = new FXMLLoader();
-		            loader.setLocation(MainApp.class.getResource("../views/StartWindow.fxml"));
-		            AnchorPane StartWindow = (AnchorPane) loader.load();
-		            Main_Pane.setCenter(StartWindow);
-		            StartControler v = loader.getController();
+		            loader.setLocation(StudentUserControler.class.getResource("../views/StudentWindow.fxml"));
+		            AnchorPane StudentUserWindow = (AnchorPane) loader.load();
+		            Main_Pane.setCenter(StudentUserWindow);
+		            StudentUserControler v = loader.getController();
 		            v.setmainpane(Main_Pane);
 		            
 		        } catch (IOException e) {
@@ -33,6 +33,21 @@ public class MainControler  {
 		
 		public void exit(){
 			Platform.exit();
+		}
+		
+		public void disconnect() {
+			//System.out.println("test");
+			 try {
+		            FXMLLoader loader = new FXMLLoader();
+		            loader.setLocation(MainApp.class.getResource("../views/StartWindow.fxml"));
+		            AnchorPane StartWindow = (AnchorPane) loader.load();
+		            Main_Pane.setCenter(StartWindow);
+		            StartControler v = loader.getController();
+		            v.setmainpane(Main_Pane);
+		            
+		        } catch (IOException e) {
+		            e.printStackTrace();
+		        }
 		}
 		
 		public void goAbout(){

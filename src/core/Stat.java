@@ -44,4 +44,9 @@ public class Stat {
 		usr.getElementsByTagName("nbCorrectAnswer").item(0).setTextContent(""+nbCorrectAnswer);
 	}
 	
+	public double getStat(int category) {
+		double value = nbThemeTotalquestion[category]/nbThemeCorrectAnswer[category];
+		return value;
+	}
+	
 }

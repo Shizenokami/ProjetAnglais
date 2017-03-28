@@ -1,4 +1,4 @@
-#rich-blue {
+.rich-blue {
     -fx-background-color: 
         #000000,
         linear-gradient(#7ebcea, #2f4b8f),
@@ -10,6 +10,10 @@
     -fx-text-fill: white;
     -fx-font-size: 12px;
 }
-#rich-blue Text {
+.rich-blue Text {
     -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.8) , 0, 0.0 , 0 , 1);
+}
+
+.background {
+    -fx-background-color: #a2a2d5;
 }

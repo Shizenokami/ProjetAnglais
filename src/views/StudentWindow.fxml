@@ -10,9 +10,9 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.StudentUserControler">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.StudentUserControler">
   <children>
-    <Button fx:id="Button_Submit" defaultButton="true" layoutX="362.0" layoutY="235.0" mnemonicParsing="false" onAction="#clicSubmit" style="-fx-background-color: #608456;" text="Submit">
+    <Button fx:id="Button_Submit" defaultButton="true" layoutX="362.0" layoutY="235.0" mnemonicParsing="false" onAction="#clicSubmit" styleClass="rich-blue" text="Submit">
       <effect>
         <DropShadow />
       </effect>
@@ -26,13 +26,13 @@
         <Font size="18.0" fx:id="x1" />
       </font>
     </Text>
-    <Button fx:id="Button_Eval" defaultButton="true" font="$x2" layoutX="139.0" layoutY="412.0" mnemonicParsing="false" onAction="#clicEval" prefHeight="60.0" prefWidth="178.0" style="-fx-background-color: #608456;" text="Start evalutaion">
+    <Button fx:id="Button_Eval" defaultButton="true" font="$x2" layoutX="139.0" layoutY="412.0" mnemonicParsing="false" onAction="#clicEval" prefHeight="60.0" prefWidth="178.0" styleClass="rich-blue" text="Start evalutaion">
       <effect>
         <DropShadow />
       </effect>
     </Button>
     <Text fx:id="ErrorText" layoutX="245.0" layoutY="522.0" scaleX="1.6714386427801096" scaleY="2.1904062835568925" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-      <Button fx:id="Button_Stats" defaultButton="true" font="$x2" layoutX="494.0" layoutY="412.0" mnemonicParsing="false" onAction="#clicStats" prefHeight="60.0" prefWidth="169.0" style="-fx-background-color: #608456;" text="See statistics">
+      <Button fx:id="Button_Stats" defaultButton="true" font="$x2" layoutX="494.0" layoutY="412.0" mnemonicParsing="false" onAction="#clicStats" prefHeight="60.0" prefWidth="169.0" styleClass="rich-blue" text="See statistics">
          <effect>
             <DropShadow />
          </effect>
