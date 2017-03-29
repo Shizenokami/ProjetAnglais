@@ -81,7 +81,7 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="Button_Game33" defaultButton="true" font="$x2" layoutX="598.0" layoutY="437.0" mnemonicParsing="false" onAction="#clicGame3" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
+      <Button fx:id="Button_Card_15" defaultButton="true" font="$x2" layoutX="598.0" layoutY="437.0" mnemonicParsing="false" onAction="#clicButton_Card_15" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
          <effect>
             <DropShadow />
          </effect>

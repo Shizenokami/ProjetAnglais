@@ -7,6 +7,7 @@ public class Memory {
 	
 	private int[] table;
 	private String[] cartes;
+	private int[] selected = { 0 , 0 };
 	
 	public void Memory() {
 		this.table = new int[16];
@@ -31,6 +32,18 @@ public class Memory {
 	        a[i] = list.remove(rand);
 	    }
 	    return a;
+	}
+	
+	public boolean find() {
+		return (Math.abs(selected[0]-selected[1])==1 && selected[0]%2==0);
+	}
+	
+	public String text(int i) {
+		return cartes[table[i]-1];
+	}
+	
+	public int getCard(int i) {
+		return table[i];
 	}
 	
 	

@@ -1,5 +1,8 @@
 package controlers;
 
+import java.io.IOException;
+
+import core.QuestionsLoad;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -25,6 +28,18 @@ public class GamesControler {
 	}
 	
 	public void clicMemory() {
+		try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(StudentUserControler.class.getResource("../views/MemoryWindow.fxml"));
+            AnchorPane memoryGameWindow = (AnchorPane) loader.load();
+            Main_Pane.setCenter(memoryGameWindow);
+            MemoryControler v = loader.getController();
+            v.initialise();
+            v.setmainpane(Main_Pane);
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 		
 	}
 	
