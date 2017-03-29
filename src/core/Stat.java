@@ -1,6 +1,15 @@
 package core;
 
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
 import org.w3c.dom.Element;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.SortedList;
 
 public class Stat {
 
@@ -10,6 +19,9 @@ public class Stat {
 	private int nbLocalAns;
 	private int nbLocalQuest;
 	
+	private List<String> QCMlist;
+	ObservableList observableList = FXCollections.observableArrayList();
+
 	private String themes[]= {"Word Order", "Articles", "Present Tenses", "Past Tenses", "Future Tense", "Passive Voice", "Confusing words", "Phrasal Verbs", "Irregular Verbs", "Linking words", "Adjectives", "Adverbs", "Gerunds and Infinitives", "Noun plus Preposition", "Prepositions", "Adjective plus Preposition", "Nouns", "Some, any, a lot of, many, much etc.", "Expressing hypothetical meaning", "Word Formation"};
 	private int  nbThemeTotalquestion[];
 	private int  nbThemeCorrectAnswer[];
@@ -19,6 +31,7 @@ public class Stat {
 		nbCorrectAnswer=Integer.parseInt(usr.getElementsByTagName("totalQuestion").item(0).getTextContent());
 		nbThemeTotalquestion=new int[20];
 		nbThemeCorrectAnswer=new int[20];
+		initialiseQCMList();
 		resetLocal();
 	}
 	
@@ -26,6 +39,18 @@ public class Stat {
 		nbLocalAns=0;
 		nbLocalQuest=0;
 	}
+	public void initialiseQCMList(){
+		QCMlist=new ArrayList<String>();
+		QCMlist.add("BIG TEST");
+		for (int temp=0;temp<18;temp++)
+			QCMlist.add(themes[temp+2]);
+		observableList.setAll(QCMlist);
+	}
+	
+	public ObservableList<String> getQCMList(){
+		return observableList;
+	}
+	
 	public int getLocalQuest(){
 		return nbLocalQuest;
 	}
@@ -61,14 +86,14 @@ public class Stat {
 	public double getStat(int category) {
 		if (nbThemeTotalquestion[category]==0)
 			return 0;
-		double value = nbThemeCorrectAnswer[category]/nbThemeTotalquestion[category];
+		double value = (double)nbThemeCorrectAnswer[category]/nbThemeTotalquestion[category];
 		return value;
 	}
 	public double getTotalRatio() {
 		double ca=0;
-		for (int temp =0;temp<20;temp++){
+		for (int temp =2;temp<20;temp++){
 			if (nbThemeTotalquestion[temp]!=0)
-				ca+=nbThemeTotalquestion[temp]/nbThemeTotalquestion[temp];
+				ca+=(double)nbThemeCorrectAnswer[temp]/nbThemeTotalquestion[temp];
 		}
 		return ca/18;
 	}
