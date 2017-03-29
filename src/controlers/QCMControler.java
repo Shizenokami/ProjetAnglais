@@ -52,6 +52,7 @@ public class QCMControler {
 		positionqcm.setText("Question : "+(position+1)+"/"+questionSet.getElement().size());
 		choice=-1;
 		validate=false;
+		Button_Next.getStyleClass().remove("rich-blue");
 	}
 	
 	
@@ -85,10 +86,12 @@ public class QCMControler {
 	public void clickValidate(){
 		if (choice==-1 || validate)
 			return;
+		Button_Next.getStyleClass().add("rich-blue");
 		studentStat.newQuestion(choice==(Integer.parseInt(questionSet.getAnsElement(position))-1), questionSet.getTheme().get(position));
 		printSolution();
 		position++;
 		validate=true;
+		
 	}
 	
 	public void clickNext(){
@@ -97,20 +100,40 @@ public class QCMControler {
 	}
 	
 	public void clickA(){
-		if (!validate)
+		if (!validate) {
 			choice =0;
+			Button_A.getStyleClass().add("answer");
+			Button_B.getStyleClass().remove("answer");
+			Button_C.getStyleClass().remove("answer");
+			Button_D.getStyleClass().remove("answer");
+		}
 	}
 	public void clickB(){
-		if (!validate)
+		if (!validate) {
 			choice =1;
+			Button_A.getStyleClass().remove("answer");
+			Button_B.getStyleClass().add("answer");
+			Button_C.getStyleClass().remove("answer");
+			Button_D.getStyleClass().remove("answer");
+		}
 	}
 	public void clickC(){
-		if (!validate)
+		if (!validate) {
 			choice =2;
+			Button_A.getStyleClass().remove("answer");
+			Button_B.getStyleClass().remove("answer");
+			Button_C.getStyleClass().add("answer");
+			Button_D.getStyleClass().remove("answer");
+		}
 	}
 	public void clickD(){
-		if (!validate)
+		if (!validate) {
 			choice =3;
+			Button_A.getStyleClass().remove("answer");
+			Button_B.getStyleClass().remove("answer");
+			Button_C.getStyleClass().remove("answer");
+			Button_D.getStyleClass().add("answer");
+		}
 	}
 	public void loadScore() {
 		try {

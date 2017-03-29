@@ -36,7 +36,7 @@ public class StudentUserControler {
 	}
 	
 	public void clicEval() {
-		loadQCM();
+		loadQCMChoice();
 	}
 	
 	public void clicSubmit() {
@@ -66,11 +66,11 @@ public class StudentUserControler {
 		
 	}
 	
-	public void loadQCM() {
+	public void loadQCMChoice() {
 		try {
             QuestionsLoad db=new QuestionsLoad();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("../views/QCMQuestion.fxml"));
+            loader.setLocation(MainApp.class.getResource("../views/QCMWindow.fxml"));
             AnchorPane StudentWindow = (AnchorPane) loader.load();
             Main_Pane.setCenter(StudentWindow);
             QCMControler v = loader.getController();
