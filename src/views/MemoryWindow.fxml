@@ -96,5 +96,10 @@
             <DropShadow />
          </effect>
       </Button>
+      <Button fx:id="Button_End" defaultButton="true" font="$x2" layoutX="330.0" layoutY="537.0" mnemonicParsing="false" onAction="#clicButton_End" prefHeight="40.0" prefWidth="140.0" styleClass="rich-blue" text="End game" visible="false">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
   </children>
 </AnchorPane>

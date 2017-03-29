@@ -6,14 +6,21 @@ import java.util.Collection;
 public class Memory {
 	
 	private int[] table;
-	private String[] cartes;
-	private int[] selected = { 0 , 0 };
+	private String[] cartes = {"perusal" , "a careful reading",
+			"emblezze" , "diverting fund",
+			"faze", "to disconcert",
+			"snigger" , "snicker : a sly \nor disrespectful \nlaugh",
+			"coarse" , "rude",
+			"truculent" , "ready to fight; \ncruel" ,
+			"rife" , "abundant or \nplentiful" ,
+			"feral" , "Savage; wild" };
 	
-	public void Memory() {
+	public Memory() {
 		this.table = new int[16];
 		for (int i=0 ; i<16 ; i++) {
-			table[i]=i+1;
+			table[i]=i;
 		}
+		shuffle();
 	}
 	
 	public void shuffle() {
@@ -34,12 +41,12 @@ public class Memory {
 	    return a;
 	}
 	
-	public boolean find() {
-		return (Math.abs(selected[0]-selected[1])==1 && selected[0]%2==0);
+	public boolean find(int i, int j) {
+		return (Math.abs(table[i]-table[j])==1 && table[i]%2==0);
 	}
 	
 	public String text(int i) {
-		return cartes[table[i]-1];
+		return cartes[table[i]];
 	}
 	
 	public int getCard(int i) {

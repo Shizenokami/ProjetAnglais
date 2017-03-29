@@ -1,5 +1,7 @@
 package controlers;
 
+import java.util.ArrayList;
+
 import core.Memory;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +19,7 @@ public class MemoryControler {
 	private Button[] liste;
 	private int[] selectedCards = { -1 , -1 };
 	private int count;
+	private ArrayList<Integer> found;
 	
 	@FXML BorderPane Main_Pane;
 	@FXML Button Button_Card_1;
@@ -63,6 +66,11 @@ public class MemoryControler {
 		game = new Memory();
 		selected = 0;
 		count=0;
+		found = new ArrayList<Integer>();
+	}
+	
+	public void clicButton_End() {
+		
 	}
 	
 	public void clicButton_Card_1() {
@@ -78,60 +86,62 @@ public class MemoryControler {
 	}
 	
 	public void clicButton_Card_4() {
-		
+		bla(3);
 	}
 	
 	public void clicButton_Card_5() {
-		
+		bla(4);
 	}
 	
 	public void clicButton_Card_6() {
-		
+		bla(5);
 	}
 	
 	public void clicButton_Card_7() {
-		
+		bla(6);
 	}
 	
 	public void clicButton_Card_8() {
-		
+		bla(7);
 	}
 	
 	public void clicButton_Card_9() {
-		
+		bla(8);
 	}
 	
 	public void clicButton_Card_10() {
-		
+		bla(9);
 	}
 	
 	public void clicButton_Card_11() {
-		
+		bla(10);
 	}
 	
 	public void clicButton_Card_12() {
-		
+		bla(11);
 	}
 	
 	public void clicButton_Card_13() {
-		
+		bla(12);
 	}
 	
 	public void clicButton_Card_14() {
-		
+		bla(13);
 	}
 	
 	public void clicButton_Card_15() {
-		
+		bla(14);
 	}
 	
 	public void clicButton_Card_16() {
-		
+		bla(15);
 	}
 	
 	public void select(int i) {
-		if (i<selectedCards[0]) {
+		if (i<selectedCards[0] && selectedCards[0]!=-1) {
 			selectedCards[1]= selectedCards[0];
+			selectedCards[0]=i; 
+		} else if (i>selectedCards[0] && selectedCards[1]!=-1) {
 			selectedCards[0]=i;
 		} else {
 			selectedCards[1] = i;
@@ -139,41 +149,53 @@ public class MemoryControler {
 	}
 	
 	public void bla(int i) {
-		if (selectedCards[0]!=i && selectedCards[1]!=i) {
+		if ((selectedCards[0]!=i && selectedCards[1]!=i) || !(found.contains(i))) {
 			liste[i].getStyleClass().add("rich-blue");
 			liste[i].getStyleClass().remove("grey");
-			//liste[0].setText(game.text(getCard(0)));
-			liste[i].setText("bla");
-			select(i);
+			liste[i].setText(game.text(game.getCard(i)));
 			if (selected==1) {
-				System.out.println("?");
-				if (game.find()) {
-					liste[selectedCards[0]].getStyleClass().add("answer");
-					liste[selectedCards[0]].getStyleClass().remove("rich-blue");
+				if (game.find(selectedCards[0],selectedCards[1])) {
+				//if (liste[i].getText().equals(liste[selectedCards[1]].getText())) {
+					//System.out.println("find!");
+					liste[i].getStyleClass().add("answer");
+					liste[i].getStyleClass().remove("rich-blue");
 					liste[selectedCards[1]].getStyleClass().add("answer");
 					liste[selectedCards[1]].getStyleClass().remove("rich-blue");
 					selectedCards[0] = -1;
 					selectedCards[1] = -1;
+					found.add(i);
+					found.add(selectedCards[1]);
 					count++;
+					if (count==8) { Button_End.setVisible(true); }
 				}
 				selected = 0;
-				
-			} 
-			if (selected == 0) {
+				//System.out.println("selected = 0");
+			} else if (selected == 0) {
 				selected+=1;
-				System.out.println("1");
+				//System.out.println("selected = 1");
 				if (selectedCards[0]!=-1) {
-					System.out.println("2");
+					//System.out.println("remove");
 					liste[selectedCards[0]].getStyleClass().add("grey");
 					liste[selectedCards[0]].getStyleClass().remove("rich-blue");
 					liste[selectedCards[1]].getStyleClass().add("grey");
 					liste[selectedCards[1]].getStyleClass().remove("rich-blue");
+					liste[selectedCards[0]].setText("");
+					liste[selectedCards[1]].setText("");
+					selectedCards[0] = -1;
+					selectedCards[1] = -1;
 				}
+				select(i);
 			}
-		} else {
+		} else if (selectedCards[0]==i || selectedCards[1]==i) {
 			liste[i].getStyleClass().remove("rich-blue");
 			liste[i].getStyleClass().add("grey");
-			
+			liste[i].setText("");
+			selected--;
+			if (selectedCards[0]==i) {
+				selectedCards[0]=-1;
+			} else {
+				select(-1);
+			}
 		}
 	}
 
