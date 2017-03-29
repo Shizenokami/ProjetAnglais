@@ -27,6 +27,8 @@ public class StudentUserControler {
 	@FXML Button Button_Stats;
 	@FXML Button Button_Eval;
 	@FXML Text ErrorText;
+	@FXML Button Button_Games;
+	
 	
 	public StudentUserControler(){
 		userstat=StartControler.userstat;
@@ -41,6 +43,20 @@ public class StudentUserControler {
 	
 	public void clicSubmit() {
 		
+	}
+	
+	public void clicGames() {
+		try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("../views/GamesWindow.fxml"));
+            AnchorPane gamesWindow = (AnchorPane) loader.load();
+            GamesControler games = loader.getController();
+            Main_Pane.setCenter(gamesWindow);
+            games.setmainpane(Main_Pane);
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 	}
 	
 	public void clicStats() {

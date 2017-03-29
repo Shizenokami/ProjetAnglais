@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.GamesControler">
+  <children>
+    <Text fx:id="ErrorText" layoutX="372.0" layoutY="48.0" scaleX="1.6714386427801096" scaleY="2.1904062835568925" strokeType="OUTSIDE" strokeWidth="0.0" text="Games">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <Button fx:id="Button_Memory" defaultButton="true" font="$x2" layoutX="33.0" layoutY="201.0" mnemonicParsing="false" onAction="#clicMemory" prefHeight="60.0" prefWidth="169.0" styleClass="rich-blue" text="Memory">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Game1" defaultButton="true" font="$x2" layoutX="221.0" layoutY="201.0" mnemonicParsing="false" onAction="#clicGame1" prefHeight="60.0" prefWidth="169.0" styleClass="rich-blue" text="See statistics">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Game2" defaultButton="true" font="$x2" layoutX="409.0" layoutY="201.0" mnemonicParsing="false" onAction="#clicGame2" prefHeight="60.0" prefWidth="169.0" styleClass="rich-blue" text="Comming soon">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Game3" defaultButton="true" font="$x2" layoutX="597.0" layoutY="201.0" mnemonicParsing="false" onAction="#clicGame3" prefHeight="60.0" prefWidth="169.0" styleClass="rich-blue" text="Comming soon">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Game1" defaultButton="true" font="$x2" layoutX="221.0" layoutY="201.0" mnemonicParsing="false" onAction="#clicGame1" prefHeight="60.0" prefWidth="169.0" styleClass="rich-blue" text="Comming soon">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Game5" defaultButton="true" font="$x2" layoutX="221.0" layoutY="282.0" mnemonicParsing="false" onAction="#clicGame5" prefHeight="60.0" prefWidth="169.0" styleClass="rich-blue" text="Comming soon">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Game4" defaultButton="true" font="$x2" layoutX="33.0" layoutY="282.0" mnemonicParsing="false" onAction="#clicGame4" prefHeight="60.0" prefWidth="169.0" styleClass="rich-blue" text="Comming soon">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Game6" defaultButton="true" font="$x2" layoutX="409.0" layoutY="282.0" mnemonicParsing="false" onAction="#clicGame6" prefHeight="60.0" prefWidth="169.0" styleClass="rich-blue" text="Comming soon">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+  </children>
+</AnchorPane>

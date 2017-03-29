@@ -4,3 +4,19 @@ Faire la fenetre QCM
 Finir la mise en forme (presque fini en vrai dès que scenebuilder arrete de planter)
 
 Tenter de lancer un qcm?
+
+------------------------------
+
+Bilan:
+StartControler: reste la partie login à faire, les fonctions sont bonnes sinon.
+MainControler: changer un peu les menus et faire le lien à le fenetre About
+MessageControler: à suprimer?
+QCMChoiceControler: intégrer la liste des choix de qcm (rapide)
+QCMControler: faire l'affichage des questions, sinon ca marche normalement.
+ScoreControler: ?
+StudentUserControler: normalement tout est bon sur celui-la
+TeacherControler: à suprimer?
+
+A faire:
+MemoryControler et faire le jeu en général quoi
+Un autre mini jeu? (titre anglais et francais des films?)

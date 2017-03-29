@@ -26,13 +26,17 @@
         <Font size="18.0" fx:id="x1" />
       </font>
     </Text>
-    <Button fx:id="Button_Eval" defaultButton="true" font="$x2" layoutX="139.0" layoutY="412.0" mnemonicParsing="false" onAction="#clicEval" prefHeight="60.0" prefWidth="178.0" styleClass="rich-blue" text="Start evalutaion">
+    <Button fx:id="Button_Eval" defaultButton="true" font="$x2" layoutX="233.0" layoutY="407.0" mnemonicParsing="false" onAction="#clicEval" prefHeight="60.0" prefWidth="178.0" styleClass="rich-blue" text="Start evalutaion">
       <effect>
         <DropShadow />
       </effect>
     </Button>
-    <Text fx:id="ErrorText" layoutX="245.0" layoutY="522.0" scaleX="1.6714386427801096" scaleY="2.1904062835568925" strokeType="OUTSIDE" strokeWidth="0.0" text="" />
-      <Button fx:id="Button_Stats" defaultButton="true" font="$x2" layoutX="494.0" layoutY="412.0" mnemonicParsing="false" onAction="#clicStats" prefHeight="60.0" prefWidth="169.0" styleClass="rich-blue" text="See statistics">
+      <Button fx:id="Button_Stats" defaultButton="true" font="$x2" layoutX="415.0" layoutY="407.0" mnemonicParsing="false" onAction="#clicStats" prefHeight="60.0" prefWidth="169.0" styleClass="rich-blue" text="See statistics">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Games" defaultButton="true" font="$x2" layoutX="324.0" layoutY="470.0" mnemonicParsing="false" onAction="#clicGames" prefHeight="60.0" prefWidth="178.0" styleClass="rich-blue" text="Games">
          <effect>
             <DropShadow />
          </effect>
