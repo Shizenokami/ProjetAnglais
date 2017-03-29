@@ -21,11 +21,6 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="Button_Game1" defaultButton="true" font="$x2" layoutX="221.0" layoutY="201.0" mnemonicParsing="false" onAction="#clicGame1" prefHeight="60.0" prefWidth="169.0" styleClass="rich-blue" text="See statistics">
-         <effect>
-            <DropShadow />
-         </effect>
-      </Button>
       <Button fx:id="Button_Game2" defaultButton="true" font="$x2" layoutX="409.0" layoutY="201.0" mnemonicParsing="false" onAction="#clicGame2" prefHeight="60.0" prefWidth="169.0" styleClass="rich-blue" text="Comming soon">
          <effect>
             <DropShadow />

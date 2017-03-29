@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.MemoryControler">
+  <children>
+    <Text fx:id="ErrorText" layoutX="372.0" layoutY="48.0" scaleX="1.6714386427801096" scaleY="2.1904062835568925" strokeType="OUTSIDE" strokeWidth="0.0" text="Memory">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <Button fx:id="Button_Card_1" defaultButton="true" font="$x2" layoutX="33.0" layoutY="171.0" mnemonicParsing="false" onAction="#clicButton_Card_1" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Card_3" defaultButton="true" font="$x2" layoutX="409.0" layoutY="171.0" mnemonicParsing="false" onAction="#clicButton_Card_3" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Card_4" defaultButton="true" font="$x2" layoutX="597.0" layoutY="171.0" mnemonicParsing="false" onAction="#clicButton_Card_4" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Card_2" defaultButton="true" font="$x2" layoutX="221.0" layoutY="171.0" mnemonicParsing="false" onAction="#clicButton_Card_2" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Card_6" defaultButton="true" font="$x2" layoutX="222.0" layoutY="260.0" mnemonicParsing="false" onAction="#clicButton_Card_6" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Card_8" defaultButton="true" font="$x2" layoutX="598.0" layoutY="260.0" mnemonicParsing="false" onAction="#clicButton_Card_8" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Card_7" defaultButton="true" font="$x2" layoutX="410.0" layoutY="260.0" mnemonicParsing="false" onAction="#clicButton_Card_7" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Card_5" defaultButton="true" font="$x2" layoutX="34.0" layoutY="260.0" mnemonicParsing="false" onAction="#clicButton_Card_5" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Card_10" defaultButton="true" font="$x2" layoutX="222.0" layoutY="348.0" mnemonicParsing="false" onAction="#clicButton_Card_10" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Card_12" defaultButton="true" font="$x2" layoutX="598.0" layoutY="348.0" mnemonicParsing="false" onAction="#clicButton_Card_12" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Card_11" defaultButton="true" font="$x2" layoutX="410.0" layoutY="348.0" mnemonicParsing="false" onAction="#clicButton_Card_11" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Card_9" defaultButton="true" font="$x2" layoutX="34.0" layoutY="348.0" mnemonicParsing="false" onAction="#clicButton_Card_9" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Card_14" defaultButton="true" font="$x2" layoutX="222.0" layoutY="437.0" mnemonicParsing="false" onAction="#clicButton_Card_14" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Game33" defaultButton="true" font="$x2" layoutX="598.0" layoutY="437.0" mnemonicParsing="false" onAction="#clicGame3" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Card_16" defaultButton="true" font="$x2" layoutX="410.0" layoutY="437.0" mnemonicParsing="false" onAction="#clicButton_Card_16" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+      <Button fx:id="Button_Card_13" defaultButton="true" font="$x2" layoutX="34.0" layoutY="437.0" mnemonicParsing="false" onAction="#clicButton_Card_13" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
+  </children>
+</AnchorPane>
