@@ -55,12 +55,21 @@ public class Stat {
 	
 	public void Save(Element usr){
 		usr.getElementsByTagName("totalQuestion").item(0).setTextContent(""+nbTotalquestion);
-		usr.getElementsByTagName("nbCorrectAnswer").item(0).setTextContent(""+nbCorrectAnswer);
+		usr.getElementsByTagName("correctAnswer").item(0).setTextContent(""+nbCorrectAnswer);
 	}
 	
 	public double getStat(int category) {
-		double value = nbThemeTotalquestion[category]/nbThemeCorrectAnswer[category];
+		if (nbThemeTotalquestion[category]==0)
+			return 0;
+		double value = nbThemeCorrectAnswer[category]/nbThemeTotalquestion[category];
 		return value;
 	}
-	
+	public double getTotalRatio() {
+		double ca=0;
+		for (int temp =0;temp<20;temp++){
+			if (nbThemeTotalquestion[temp]!=0)
+				ca+=nbThemeTotalquestion[temp]/nbThemeTotalquestion[temp];
+		}
+		return ca/18;
+	}
 }

@@ -76,6 +76,8 @@ public class QuestionsLoad {
 			do {
 				c=0;
 				num =(int)(Math.random()*600);
+				if (num%20==0  || num%20==1)
+					c++;
 				for (int k:numbers)
 					if (num==k)
 						c++;

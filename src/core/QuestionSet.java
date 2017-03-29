@@ -16,6 +16,8 @@ public class QuestionSet {
 	}
 	
 	public void  addQuestion(Element e,int theme){
+		if (theme==0 || theme==1)
+			return;
 		questions.add(e);
 		this.theme.add(theme);
 	}

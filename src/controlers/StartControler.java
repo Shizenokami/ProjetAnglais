@@ -16,8 +16,9 @@ import javafx.scene.text.Text;
 public class StartControler {
 	
 	
-	private AuthentificationUser auth;
-	private Element userelement;
+	static AuthentificationUser auth;
+	static Element userelement=null;
+	static Stat userstat=null;
 	
 	@FXML BorderPane Main_Pane;
 	@FXML TextField UsernameSI;
@@ -39,23 +40,17 @@ public class StartControler {
 	}
 	
 	public void clickSignIn() {
-		//if (UsernameSI.getText()==null || PassWordSI.getText()==null) {
-			//ErrorText.setText("Please enter your username and password to login.");
-		loadStudent();
-		/*} else {
-			Element userelement;
-			if ( (userelement = userlist.signIn(UsernameSI.getText(), PassWordSI.getText())) == null) {
 		if (UsernameSI.getText().equals("") || PasswordSI.getText().equals("")) {
 			ErrorText.setText("Please enter your username and password to login.");
 		} else {
 			if ( (userelement = auth.signIn(UsernameSI.getText(), PasswordSI.getText())) == null) {
->>>>>>> 30bf70a86fb891688056f3d52e44fbddd8f6953a
 				ErrorText.setText("Your account or your identifiers do not exist.\nPlease Sign-up or check if your username and password are correct.");
 			} else {
+				userstat=new Stat(userelement);
 				loadStudent();
 			}
 			
-		}*/
+		}
 	}
 	
 	public void clickSignUp() {
@@ -67,8 +62,9 @@ public class StartControler {
 			if (auth.signUp(UsernameSU.getText(), EmailAddr.getText(), PasswordSU.getText())) {
 				ErrorText.setText("You signed-up well, now please sign-in.");
 			}
-			else
+			else{
 				ErrorText.setText("Account already existing");
+				}
 		}
 	}
 	
@@ -80,7 +76,7 @@ public class StartControler {
             AnchorPane StudentWindow = (AnchorPane) loader.load();
             Main_Pane.setCenter(StudentWindow);
             StudentUserControler v = loader.getController();
-            v.setStat(userelement);
+            v.setStat(userstat);
             v.setmainpane(Main_Pane);
             
         } catch (IOException e) {

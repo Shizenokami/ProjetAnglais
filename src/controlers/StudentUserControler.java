@@ -18,11 +18,7 @@ import javafx.scene.text.Text;
 
 public class StudentUserControler {
 	
-	private StudentStatsControler stats;
-	private Stat stat;
-
 	private Stat userstat;
-	private AuthentificationUser auth;
 	
 	
 	@FXML BorderPane Main_Pane;
@@ -33,11 +29,10 @@ public class StudentUserControler {
 	@FXML Text ErrorText;
 	
 	public StudentUserControler(){
+		userstat=StartControler.userstat;
 	}
 
-	public void setStat(Element user){
-		userstat=new Stat(user);
-		
+	public void setStat(Stat userstat){
 	}
 	
 	public void clicEval() {
@@ -53,10 +48,10 @@ public class StudentUserControler {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("../views/StudentStatWindow.fxml"));
             AnchorPane StudentStatsWindow = (AnchorPane) loader.load();
+            StudentStatsControler stats = loader.getController();
             Main_Pane.setCenter(StudentStatsWindow);
-            StudentUserControler v = loader.getController();
-            v.setmainpane(Main_Pane);
-            //stats.setStatistics(stat);
+            stats.setStatistics(userstat);
+            stats.setmainpane(Main_Pane);
             
         } catch (IOException e) {
             e.printStackTrace();

@@ -83,7 +83,7 @@ public class QCMControler {
 	
 	
 	public void clickValidate(){
-		if (choice==-1)
+		if (choice==-1 || validate)
 			return;
 		studentStat.newQuestion(choice==(Integer.parseInt(questionSet.getAnsElement(position))-1), questionSet.getTheme().get(position));
 		printSolution();

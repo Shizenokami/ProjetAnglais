@@ -1,56 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.shape.*?>
-<?import java.lang.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.StudentStatsControler">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.StudentStatsControler">
     <children>
     <Text fx:id="Title" layoutX="331.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Statistics">
       <font>
         <Font size="36.0" fx:id="x1" />
       </font>
     </Text>
-      <SplitPane dividerPositions="0.5012787723785166" layoutX="8.0" layoutY="88.0" prefHeight="508.0" prefWidth="784.0" styleClass="background" stylesheets="@stylesheet.css">
+      <SplitPane dividerPositions="0.5, 0.5" layoutX="8.0" layoutY="88.0" prefHeight="508.0" prefWidth="784.0" styleClass="background" stylesheets="@stylesheet.css">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="344.0" prefWidth="336.0">
                <children>
-                  <Text fx:id="Category_1" layoutX="14.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category 1">
+                  <Text fx:id="Category_1" layoutX="14.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Present Tenses">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Text>
                   <ProgressBar fx:id="progressBar_1" layoutX="108.0" layoutY="14.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
-                  <Text fx:id="Category_2" layoutX="14.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category 2">
+                  <Text fx:id="Category_2" layoutX="11.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Past Tenses">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Text>
-                  <ProgressBar fx:id="progressBar_2" layoutX="108.0" layoutY="57.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
-                  <Text fx:id="Category_4" layoutX="14.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category 4">
+                  <ProgressBar fx:id="progressBar_2" layoutX="105.0" layoutY="75.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
+                  <Text fx:id="Category_4" layoutX="12.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Passive Voice">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Text>
-                  <ProgressBar fx:id="progressBar_4" layoutX="108.0" layoutY="143.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
-                  <Text fx:id="Category_3" layoutX="14.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Category 3">
+                  <ProgressBar fx:id="progressBar_4" layoutX="106.0" layoutY="188.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
+                  <Text fx:id="Category_3" layoutX="12.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Future Tense">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Text>
-                  <ProgressBar fx:id="progressBar_3" layoutX="108.0" layoutY="96.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
+                  <ProgressBar fx:id="progressBar_3" layoutX="106.0" layoutY="141.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
+                  <Text fx:id="Category_5" layoutX="9.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confusing words">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <ProgressBar fx:id="progressBar_5" layoutX="103.0" layoutY="239.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
+                  <Text fx:id="Category_6" layoutX="9.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phrasal Verbs">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <ProgressBar fx:id="progressBar_6" layoutX="103.0" layoutY="298.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
+                  <Text fx:id="Category_7" layoutX="9.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Irregular Verbs">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <ProgressBar fx:id="progressBar_7" layoutX="103.0" layoutY="349.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
+                  <Text fx:id="Category_8" layoutX="9.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Linking words">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <ProgressBar fx:id="progressBar_8" layoutX="103.0" layoutY="401.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
+                  <ProgressBar fx:id="progressBar_9" layoutX="105.0" layoutY="452.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
+                  <Text fx:id="Category_9" layoutX="15.0" layoutY="479.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjectives">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="506.0" prefWidth="385.0" />
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="344.0" prefWidth="336.0">
+               <children>
+                  <Text fx:id="Category_10" layoutX="7.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adverbs">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <ProgressBar fx:id="progressBar_10" layoutX="101.0" layoutY="32.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
+                  <Text fx:id="Category_12" layoutX="8.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Noun plus Preposition">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <ProgressBar fx:id="progressBar_12" layoutX="102.0" layoutY="145.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
+                  <Text fx:id="Category_11" layoutX="6.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gerunds and Infinitives">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <ProgressBar fx:id="progressBar_11" layoutX="99.0" layoutY="88.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
+                  <Text fx:id="Category_13" layoutX="5.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prepositions">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <ProgressBar fx:id="progressBar_13" layoutX="100.0" layoutY="198.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
+                  <Text fx:id="Category_14" layoutX="5.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adjective plus Preposition">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <ProgressBar fx:id="progressBar_14" layoutX="99.0" layoutY="255.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
+                  <Text fx:id="Category_15" layoutX="6.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nouns">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <ProgressBar fx:id="progressBar_15" layoutX="100.0" layoutY="310.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
+                  <Text fx:id="Category_16" layoutX="6.0" layoutY="381.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Much,any,..">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <ProgressBar fx:id="progressBar_16" layoutX="100.0" layoutY="362.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
+                  <Text fx:id="Category_17" layoutX="6.0" layoutY="441.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meaning">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <ProgressBar fx:id="progressBar_16" layoutX="99.0" layoutY="414.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
+                  <Text fx:id="Category_18" layoutX="6.0" layoutY="483.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Word Formation">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <ProgressBar fx:id="progressBar_17" layoutX="100.0" layoutY="464.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
+               </children>
+            </AnchorPane>
         </items>
       </SplitPane>
+      <Text fx:id="Category_101" layoutX="425.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <ProgressBar fx:id="progressBar_18" layoutX="519.0" layoutY="61.0" prefHeight="24.0" prefWidth="273.0" progress="0.0" styleClass="rich-blue" stylesheets="@stylesheet.css" />
   </children>
 
 </AnchorPane>
