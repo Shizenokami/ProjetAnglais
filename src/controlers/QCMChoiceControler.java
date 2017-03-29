@@ -12,9 +12,8 @@ import javafx.scene.layout.BorderPane;
 
 public class QCMChoiceControler {
 	
-	private boolean start=false;
+	private boolean start=true;
 	private String choice;
-	private Stat userstat;
 	
 	@FXML BorderPane Main_Pane;
 	@FXML ListView<String> choiceList;
@@ -27,6 +26,10 @@ public class QCMChoiceControler {
 			loadQCM();
 		}
 	}
+	public void setmainpane(BorderPane b){
+		this.Main_Pane=b;
+	}
+	
 	
 	public void clicList() {
 		String choice = choiceList.getSelectionModel().getSelectedItem();
@@ -42,8 +45,8 @@ public class QCMChoiceControler {
             AnchorPane StudentWindow = (AnchorPane) loader.load();
             Main_Pane.setCenter(StudentWindow);
             QCMControler v = loader.getController();
-            userstat.resetLocal();
-            v.setParam(db.getRandomNumberQuestions(20,1),userstat);
+            StartControler.userstat.resetLocal();
+            v.setParam(db.getRandomNumberQuestions(20,1),StartControler.userstat);
             v.setmainpane(Main_Pane);
             
         } catch (IOException e) {

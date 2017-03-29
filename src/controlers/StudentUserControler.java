@@ -89,9 +89,7 @@ public class StudentUserControler {
             loader.setLocation(MainApp.class.getResource("../views/QCMWindow.fxml"));
             AnchorPane StudentWindow = (AnchorPane) loader.load();
             Main_Pane.setCenter(StudentWindow);
-            QCMControler v = loader.getController();
-            userstat.resetLocal();
-            v.setParam(db.getRandomNumberQuestions(20,1),userstat);
+            QCMChoiceControler v = loader.getController();
             v.setmainpane(Main_Pane);
             
         } catch (IOException e) {
