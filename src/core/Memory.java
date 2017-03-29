@@ -27,7 +27,7 @@ public class Memory {
 		table=shuffle(table);
 	}
 	
-	public static int[] shuffle(int[] array) {
+	public int[] shuffle(int[] array) {
 	    int[] a = new int[array.length];
 	    //convert int[] to ArrayList<Integer>
 	    ArrayList<Integer> list = new ArrayList<>();
@@ -42,17 +42,15 @@ public class Memory {
 	}
 	
 	public boolean find(int i, int j) {
-		return (Math.abs(table[i]-table[j])==1 && table[i]%2==0);
+		int k,l;
+		k=Math.min(table[j], table[i]);
+		l=Math.max(table[j], table[i]);
+		return ((l-k)==1 && k%2==0);
 	}
 	
 	public String text(int i) {
 		return cartes[table[i]];
 	}
-	
-	public int getCard(int i) {
-		return table[i];
-	}
-	
-	
+		
 
 }

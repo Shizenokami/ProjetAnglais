@@ -81,12 +81,12 @@
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="Button_Card_15" defaultButton="true" font="$x2" layoutX="598.0" layoutY="437.0" mnemonicParsing="false" onAction="#clicButton_Card_15" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
+      <Button fx:id="Button_Card_16" defaultButton="true" font="$x2" layoutX="598.0" layoutY="437.0" mnemonicParsing="false" onAction="#clicButton_Card_16" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
          <effect>
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="Button_Card_16" defaultButton="true" font="$x2" layoutX="410.0" layoutY="437.0" mnemonicParsing="false" onAction="#clicButton_Card_16" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
+      <Button fx:id="Button_Card_15" defaultButton="true" font="$x2" layoutX="410.0" layoutY="437.0" mnemonicParsing="false" onAction="#clicButton_Card_15" prefHeight="81.0" prefWidth="169.0" styleClass="grey">
          <effect>
             <DropShadow />
          </effect>

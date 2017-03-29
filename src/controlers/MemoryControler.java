@@ -1,5 +1,6 @@
 package controlers;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import core.Memory;
@@ -14,8 +15,7 @@ import javafx.scene.text.Text;
 public class MemoryControler {
 	
 	private Memory game;
-	private boolean ended=false;
-	private int selected;
+	private boolean selected;
 	private Button[] liste;
 	private int[] selectedCards = { -1 , -1 };
 	private int count;
@@ -64,13 +64,23 @@ public class MemoryControler {
 		liste[15] = Button_Card_16;
 		
 		game = new Memory();
-		selected = 0;
+		selected = false;
 		count=0;
 		found = new ArrayList<Integer>();
 	}
 	
 	public void clicButton_End() {
-		
+		try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("../views/GamesWindow.fxml"));
+            AnchorPane gamesWindow = (AnchorPane) loader.load();
+            GamesControler games = loader.getController();
+            Main_Pane.setCenter(gamesWindow);
+            games.setmainpane(Main_Pane);
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 	}
 	
 	public void clicButton_Card_1() {
@@ -138,25 +148,25 @@ public class MemoryControler {
 	}
 	
 	public void select(int i) {
-		if (i<selectedCards[0] && selectedCards[0]!=-1) {
-			selectedCards[1]= selectedCards[0];
-			selectedCards[0]=i; 
-		} else if (i>selectedCards[0] && selectedCards[1]!=-1) {
+		if (selectedCards[0]==-1 && selectedCards[1]==-1) {
+			selectedCards[1]=i; 
+		} else if (selectedCards[0]==-1 && i<selectedCards[1]) {
 			selectedCards[0]=i;
 		} else {
-			selectedCards[1] = i;
+			selectedCards[0] = selectedCards[1];
+			selectedCards[1]=i;
 		}
+		System.out.println(selectedCards[0]+" "+selectedCards[1]);
 	}
 	
 	public void bla(int i) {
-		if ((selectedCards[0]!=i && selectedCards[1]!=i) || !(found.contains(i))) {
+		if ((selectedCards[0]!=i && selectedCards[1]!=i) && !(found.contains(i))) {
 			liste[i].getStyleClass().add("rich-blue");
 			liste[i].getStyleClass().remove("grey");
-			liste[i].setText(game.text(game.getCard(i)));
-			if (selected==1) {
-				if (game.find(selectedCards[0],selectedCards[1])) {
-				//if (liste[i].getText().equals(liste[selectedCards[1]].getText())) {
-					//System.out.println("find!");
+			liste[i].setText(game.text(i));
+			if (selected) {
+				if ( game.find(i,selectedCards[1]) ) {
+					System.out.println("find!");
 					liste[i].getStyleClass().add("answer");
 					liste[i].getStyleClass().remove("rich-blue");
 					liste[selectedCards[1]].getStyleClass().add("answer");
@@ -167,14 +177,16 @@ public class MemoryControler {
 					found.add(selectedCards[1]);
 					count++;
 					if (count==8) { Button_End.setVisible(true); }
+				} else {
+					select(i);
 				}
-				selected = 0;
-				//System.out.println("selected = 0");
-			} else if (selected == 0) {
-				selected+=1;
-				//System.out.println("selected = 1");
+				System.out.println("selected = 2 or 0");
+				System.out.println("i="+i);
+				selected=false;
+			} else if (!selected) {
+				selected=true;
 				if (selectedCards[0]!=-1) {
-					//System.out.println("remove");
+					System.out.println("remove");
 					liste[selectedCards[0]].getStyleClass().add("grey");
 					liste[selectedCards[0]].getStyleClass().remove("rich-blue");
 					liste[selectedCards[1]].getStyleClass().add("grey");
@@ -184,19 +196,23 @@ public class MemoryControler {
 					selectedCards[0] = -1;
 					selectedCards[1] = -1;
 				}
+				System.out.println("selected = 1");
+				System.out.println("i="+i);
 				select(i);
 			}
-		} else if (selectedCards[0]==i || selectedCards[1]==i) {
+		}/* else if (selectedCards[1]==i && !(found.contains(i))) {
 			liste[i].getStyleClass().remove("rich-blue");
 			liste[i].getStyleClass().add("grey");
 			liste[i].setText("");
-			selected--;
-			if (selectedCards[0]==i) {
-				selectedCards[0]=-1;
-			} else {
-				select(-1);
-			}
-		}
+			selected=!selected;
+			select(-1);
+		} else if (selectedCards[0]==i && !(found.contains(i))) {
+			liste[i].getStyleClass().remove("rich-blue");
+			liste[i].getStyleClass().add("grey");
+			liste[i].setText("");
+			selected=!selected;
+			selectedCards[0]=-1;
+		}*/
 	}
 
 }

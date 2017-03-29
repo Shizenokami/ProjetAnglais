@@ -20,3 +20,21 @@ TeacherControler: à suprimer?
 A faire:
 MemoryControler et faire le jeu en général quoi
 Un autre mini jeu? (titre anglais et francais des films?)
+
+
+--------------------------------
+
+LE POINT DE TRES TRES TARD:
+
+Le memory marche nickel
+j'ai pas eu le temps de retoucher les diapo, j'essaie de faire ca demain en CCE avec toi.
+
+J'ai pas corrigé les petites erreurs et bugs sur les boutons
+J'ai supprimé les liens vers les trucs professeurs.
+
+Faudrait gérer le menu (files et autres) nommer le projet
+et corriger la classe QCMChoice qui a une erreur.
+
+(j'en ai marre...)
+
+Faudrait pouvoir sauvegarder les stats d'un lancement sur l'autre et quand on change d'utilisateur si possible.

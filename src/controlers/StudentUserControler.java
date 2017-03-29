@@ -22,8 +22,6 @@ public class StudentUserControler {
 	
 	
 	@FXML BorderPane Main_Pane;
-	@FXML TextField TeacherCode;
-	@FXML Button Button_Submit;
 	@FXML Button Button_Stats;
 	@FXML Button Button_Eval;
 	@FXML Text ErrorText;
@@ -39,10 +37,6 @@ public class StudentUserControler {
 	
 	public void clicEval() {
 		loadQCMChoice();
-	}
-	
-	public void clicSubmit() {
-		
 	}
 	
 	public void clicGames() {

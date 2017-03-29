@@ -12,34 +12,35 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.StudentUserControler">
   <children>
-    <Button fx:id="Button_Submit" defaultButton="true" layoutX="362.0" layoutY="235.0" mnemonicParsing="false" onAction="#clicSubmit" styleClass="rich-blue" text="Submit">
-      <effect>
-        <DropShadow />
-      </effect>
-      <font>
-        <Font name="System Bold" size="15.0" fx:id="x2" />
-      </font>
-    </Button>
-    <TextField fx:id="TeacherCode" layoutX="252.0" layoutY="188.0" prefHeight="31.0" prefWidth="131.0" />
-    <Text layoutX="423.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter a Teacher Code">
-      <font>
-        <Font size="18.0" fx:id="x1" />
-      </font>
-    </Text>
-    <Button fx:id="Button_Eval" defaultButton="true" font="$x2" layoutX="233.0" layoutY="407.0" mnemonicParsing="false" onAction="#clicEval" prefHeight="60.0" prefWidth="178.0" styleClass="rich-blue" text="Start evalutaion">
+    <Button fx:id="Button_Eval" defaultButton="true" font="$x2" layoutX="75.0" layoutY="114.0" mnemonicParsing="false" onAction="#clicEval" prefHeight="60.0" prefWidth="178.0" styleClass="rich-blue" text="Start evalutaion">
       <effect>
         <DropShadow />
       </effect>
     </Button>
-      <Button fx:id="Button_Stats" defaultButton="true" font="$x2" layoutX="415.0" layoutY="407.0" mnemonicParsing="false" onAction="#clicStats" prefHeight="60.0" prefWidth="169.0" styleClass="rich-blue" text="See statistics">
+      <Button fx:id="Button_Stats" defaultButton="true" font="$x2" layoutX="316.0" layoutY="114.0" mnemonicParsing="false" onAction="#clicStats" prefHeight="60.0" prefWidth="169.0" styleClass="rich-blue" text="See statistics">
          <effect>
             <DropShadow />
          </effect>
       </Button>
-      <Button fx:id="Button_Games" defaultButton="true" font="$x2" layoutX="324.0" layoutY="470.0" mnemonicParsing="false" onAction="#clicGames" prefHeight="60.0" prefWidth="178.0" styleClass="rich-blue" text="Games">
+      <Button fx:id="Button_Games" defaultButton="true" font="$x2" layoutX="550.0" layoutY="114.0" mnemonicParsing="false" onAction="#clicGames" prefHeight="60.0" prefWidth="178.0" styleClass="rich-blue" text="Games">
          <effect>
             <DropShadow />
          </effect>
       </Button>
+      <Text layoutX="79.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chose a MCQ and start training!" wrappingWidth="170.091796875">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="315.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="See your performances" wrappingWidth="170.091796875">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="554.0" layoutY="217.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chose a mini game to relax" wrappingWidth="170.091796875">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
   </children>
 </AnchorPane>
