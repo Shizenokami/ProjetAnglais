@@ -44,6 +44,7 @@ public class MainControler  {
 			 try {
 				 if (!StartControler.userstat.equals(null))
 					 StartControler.userstat.Save(StartControler.userelement);
+				 	StartControler.auth.saveinUsers();
 		            FXMLLoader loader = new FXMLLoader();
 		            loader.setLocation(MainApp.class.getResource("../views/StartWindow.fxml"));
 		            AnchorPane StartWindow = (AnchorPane) loader.load();

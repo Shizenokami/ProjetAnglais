@@ -51,8 +51,14 @@ public class QCMControler {
 		explanation.setText("");
 		positionqcm.setText("Question : "+(position+1)+"/"+questionSet.getElement().size());
 		choice=-1;
-		validate=false;
+		validate=false;;
+		if (position!=0)
+			Button_Next.getStyleClass().add("grey");
 		Button_Next.getStyleClass().remove("rich-blue");
+		Button_A.getStyleClass().remove("answer");
+		Button_B.getStyleClass().remove("answer");
+		Button_C.getStyleClass().remove("answer");
+		Button_D.getStyleClass().remove("answer");
 	}
 	
 	
@@ -87,6 +93,7 @@ public class QCMControler {
 		if (choice==-1 || validate)
 			return;
 		Button_Next.getStyleClass().add("rich-blue");
+		Button_Next.getStyleClass().remove("grey");
 		studentStat.newQuestion(choice==(Integer.parseInt(questionSet.getAnsElement(position))-1), questionSet.getTheme().get(position));
 		printSolution();
 		position++;

@@ -86,6 +86,8 @@ public class AuthentificationUser {
 			Element pass=doc.createElement("password");
 			Element totalQuestion=doc.createElement("totalQuestion");
 			Element correctAnswer=doc.createElement("correctAnswer");
+			Element nbtotalQuestion=doc.createElement("nbtotalQuestion");
+			Element nbcorrectAnswer=doc.createElement("nbcorrectAnswer");
 			Element uElement = (Element) setUser.item(0);
 			uElement.appendChild(newUser);
 			newUser.appendChild(name);
@@ -93,11 +95,15 @@ public class AuthentificationUser {
 			newUser.appendChild(pass);
 			newUser.appendChild(totalQuestion);
 			newUser.appendChild(correctAnswer);
+			newUser.appendChild(nbtotalQuestion);
+			newUser.appendChild(nbcorrectAnswer);
 			name.appendChild(doc.createTextNode(userName));
 			email.appendChild(doc.createTextNode(mail));
 			pass.appendChild(doc.createTextNode(password));
 			totalQuestion.appendChild(doc.createTextNode("0"));
 			correctAnswer.appendChild(doc.createTextNode("0"));
+			nbtotalQuestion.appendChild(doc.createTextNode("0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"));
+			nbcorrectAnswer.appendChild(doc.createTextNode("0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0"));
 			saveinUsers(pathDoc);}
 		else 
 			System.out.println("user already exist");

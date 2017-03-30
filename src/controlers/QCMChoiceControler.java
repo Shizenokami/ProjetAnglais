@@ -37,6 +37,7 @@ public class QCMChoiceControler {
 		choice = choiceList.getSelectionModel().getSelectedItem();
 		start = true;
 		Button_Start.getStyleClass().add("rich-blue");
+		Button_Start.getStyleClass().remove("grey");
 	}
 	public QuestionSet getQuestion(){
 		if (choice.equals("BIG TEST"))

@@ -17,7 +17,7 @@ public class MainApp extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("Name of the Project");
+        this.primaryStage.setTitle("The MCQ");
         initialisation();
         showWindow();
     }
@@ -49,7 +49,7 @@ public class MainApp extends Application {
 		        e.printStackTrace();
 		    }
 	    }
-
+	 
 	 public Stage getPrimaryStage(){
 		 return primaryStage;
 	 }

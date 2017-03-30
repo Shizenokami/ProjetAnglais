@@ -28,11 +28,28 @@ public class Stat {
 	
 	public Stat(Element usr){
 		nbTotalquestion=Integer.parseInt(usr.getElementsByTagName("totalQuestion").item(0).getTextContent());
-		nbCorrectAnswer=Integer.parseInt(usr.getElementsByTagName("totalQuestion").item(0).getTextContent());
+		nbCorrectAnswer=Integer.parseInt(usr.getElementsByTagName("correctAnswer").item(0).getTextContent());
 		nbThemeTotalquestion=new int[20];
 		nbThemeCorrectAnswer=new int[20];
+		nbThemeTotalquestion=parseTab(usr.getElementsByTagName("nbtotalQuestion").item(0).getTextContent());
+		nbThemeCorrectAnswer=parseTab(usr.getElementsByTagName("nbcorrectAnswer").item(0).getTextContent());
+
 		initialiseQCMList();
 		resetLocal();
+	}
+	public int[] parseTab(String tab){
+		String tabtemp[]=tab.split(",");
+		int tabv[]=new int[20];
+		for (int temp=0;temp<tabtemp.length;temp++)
+			tabv[temp]=Integer.parseInt(tabtemp[temp]);
+		return tabv;
+	}
+	public String savePars(int[] tab){
+		String ret=""+tab[0];
+		for (int temp=1;temp<tab.length;temp++){
+			ret+=","+tab[temp];
+		}
+		return ret;
 	}
 	
 	public void resetLocal(){
@@ -81,6 +98,8 @@ public class Stat {
 	public void Save(Element usr){
 		usr.getElementsByTagName("totalQuestion").item(0).setTextContent(""+nbTotalquestion);
 		usr.getElementsByTagName("correctAnswer").item(0).setTextContent(""+nbCorrectAnswer);
+		usr.getElementsByTagName("nbtotalQuestion").item(0).setTextContent(savePars(nbThemeTotalquestion));
+		usr.getElementsByTagName("nbcorrectAnswer").item(0).setTextContent(""+savePars(nbThemeCorrectAnswer));
 	}
 	
 	public double getStat(int category) {
