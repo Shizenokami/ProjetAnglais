@@ -12,7 +12,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlers.StudentUserControler">
   <children>
-    <Button fx:id="Button_Eval" defaultButton="true" font="$x2" layoutX="75.0" layoutY="114.0" mnemonicParsing="false" onAction="#clicEval" prefHeight="60.0" prefWidth="178.0" styleClass="rich-blue" text="Start evalutaion">
+    <Button fx:id="Button_Eval" defaultButton="true" font="$x2" layoutX="75.0" layoutY="114.0" mnemonicParsing="false" onAction="#clicEval" prefHeight="60.0" prefWidth="178.0" styleClass="rich-blue" text="Start evaluation">
       <effect>
         <DropShadow />
       </effect>
