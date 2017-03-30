@@ -6,14 +6,14 @@ import java.util.Collection;
 public class Memory {
 	
 	private int[] table;
-	private String[] cartes = {"perusal" , "a careful reading",
+	private String[] cartes = {"perusal" , "a careful \nreading",
 			"emblezze" , "diverting fund",
 			"faze", "to disconcert",
 			"snigger" , "snicker : a sly \nor disrespectful \nlaugh",
 			"coarse" , "rude",
 			"truculent" , "ready to fight; \ncruel" ,
 			"rife" , "abundant or \nplentiful" ,
-			"feral" , "Savage; wild" };
+			"feral" , "Savage, wild" };
 	
 	public Memory() {
 		this.table = new int[16];
